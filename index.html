@@ -1,0 +1,1137 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0d3a6f">
+  <title>Ajude Allan e Guilherme — Um irmão que cuida do outro com tudo que tem | Ong Crescendo com Amor</title>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PWDJKMGH');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --verde:#2e7d32; --verde-hover:#1f6a22; --azul:#0d3a6f;
+    --azul-toast:#083a6f; --azul-toast-bg:#d6ebff; --azul-toast-brd:#b8daf8;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;}
+  html,body{height:100%;}
+  body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:#fff;color:#0f172a;overflow-x:hidden;font-weight:400;width:100%;}
+  img,svg{max-width:100%;display:block}
+  h1,h2,h3,h4{margin:0 0 .5rem;line-height:1.25;word-break:break-word;hyphens:auto;font-weight:700;}
+  p{margin:.5rem 0;line-height:1.6;word-break:break-word}
+  a{color:var(--azul);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .hidden{display:none !important}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  .container{max-width:1040px;margin:0 auto;padding:0 1rem;width:100%;}
+  .grid{display:grid;gap:1.5rem}
+  @media(min-width:1024px){.lg-2{grid-template-columns:1fr 1fr}}
+  @media(min-width:1024px){.lg-aside{grid-template-columns:1fr 360px}}
+  .card{background:#fff;border-radius:12px;box-shadow:0 10px 24px rgba(13,58,111,.06),0 2px 6px rgba(0,0,0,.04)}
+  .glass{backdrop-filter:saturate(140%) blur(6px)}
+  .content-defer{content-visibility:auto;contain-intrinsic-size:600px 800px}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.95);box-shadow:0 10px 24px rgba(13,58,111,.06),0 2px 6px rgba(0,0,0,.04);width:100%;}
+  header .wrap{display:flex;align-items:center;gap:.75rem;height:72px;max-width:1040px;margin:0 auto;padding:0 1rem;}
+  header nav{margin-left:auto;display:none;align-items:center;gap:1.5rem}
+  @media(min-width:1024px){header nav{display:flex}}
+  #menuBtn{padding:.5rem .6rem;border-radius:10px;border:1px solid #e5e7eb;color:var(--azul);background:#fff}
+  #menuBtn:hover{background:#f8fafc}
+
+  #drawer{position:fixed;top:0;left:0;height:100vh;width:320px;max-width:92vw;background:#fff;transform:translateX(-100%);transition:transform .3s ease;padding:4rem 1.5rem;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.18)}
+  #drawer.active{transform:translateX(0)}
+  #drawer nav{display:flex;flex-direction:column;gap:1rem}
+  #drawerBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.3);display:none;z-index:40}
+  #drawerBackdrop.active{display:block}
+  #closeDrawer{position:absolute;top:10px;right:10px;border:none;background:#fff;border-radius:10px;padding:.4rem}
+
+  #heroSlider{position:relative;overflow:hidden;width:100%;background:#f8fafc;height:auto;min-height:300px;aspect-ratio:16/9;}
+  #heroSlider .slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;pointer-events:none;will-change:opacity;display:flex;align-items:center;justify-content:center;padding:0;}
+  #heroSlider .slide.active{opacity:1;pointer-events:auto;}
+  #heroSlider .slide img{width:auto;max-width:100%;height:auto;max-height:100%;object-fit:contain;object-position:center;}
+  #heroSlider .slide video{width:100%;height:100%;object-fit:contain;object-position:center;background:#000;}
+  #heroSlider .navbtn{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;display:grid;place-items:center;background:rgba(255,255,255,.85);border-radius:999px;border:1px solid #e5e7eb;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+  #heroSlider .navbtn:hover{background:#fff;}
+  #heroSlider .prev{left:8px;}
+  #heroSlider .next{right:8px;}
+  #heroSlider .dots{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);display:flex;gap:8px;}
+  .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(0,0,0,.08);box-shadow:0 1px 4px rgba(0,0,0,.08);}
+  .dot.active{background:var(--azul);}
+
+  .progress{height:12px;background:#e5e7eb;border-radius:999px;overflow:hidden;position:relative;width:100%;}
+  .progress .bar{position:absolute;left:0;top:0;height:100%;width:0%;background:var(--verde);background:linear-gradient(90deg,var(--verde),var(--verde-hover));transition:width .6s ease;border-radius:999px;}
+  label{font-size:.9rem;color:#475569}
+  input,textarea{border:1px solid #e5e7eb;border-radius:12px;padding:.75rem 1rem;width:100%;font-size:1rem;background:#fff}
+  input:focus,textarea:focus{outline:none;border-color:var(--verde);box-shadow:0 0 0 2px rgba(46,125,50,.2)}
+  .btn{cursor:pointer;transition:transform .06s ease,filter .2s ease,background-color .2s ease;border:none;word-break:break-word}
+  .btn:active{transform:translateY(1px)}
+  .btn-green{background:var(--verde);color:#fff;border-radius:12px;padding:.75rem 1.25rem}
+  .btn-green:hover{background:var(--verde-hover)}
+  .btn-blue{background:var(--azul);color:#fff;border-radius:12px;padding:.75rem 1.25rem}
+  .btn-blue:hover{filter:brightness(1.1)}
+  .btn-outline{border:1px solid var(--azul);color:var(--azul);border-radius:12px;padding:.75rem 1.25rem;background:#fff}
+  .btn-outline:hover{background:var(--azul);color:#fff}
+
+  #listaComentarios li{display:flex;gap:1rem;flex-wrap:wrap}
+  #listaComentarios li > div{flex:1;min-width:0}
+  #listaComentarios li > div > div{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+  #listaComentarios li p{min-width:0}
+
+  .avatar-initials{
+    width:48px;height:48px;border-radius:50%;display:flex;align-items:center;
+    justify-content:center;font-weight:700;font-size:1rem;color:#fff;
+    flex:0 0 48px;user-select:none;letter-spacing:.5px;
+  }
+
+  #toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:var(--azul);color:#fff;padding:.75rem 1rem;border-radius:12px;max-width:calc(100vw - 2rem);word-break:break-word;z-index:9998;}
+
+  footer{border-top:1px solid #e5e7eb;margin-top:2rem;width:100%;background:#f8fafc;}
+  .footer-main{max-width:1040px;margin:0 auto;padding:2.5rem 1rem 1.5rem;display:grid;gap:2rem;grid-template-columns:1fr;}
+  @media(min-width:768px){.footer-main{grid-template-columns:1.5fr 1fr 1fr;}}
+  .footer-col h4{font-size:.95rem;font-weight:700;color:var(--azul);margin-bottom:.75rem;}
+  .footer-col p,.footer-col a{font-size:.85rem;color:#475569;line-height:1.7;display:block;}
+  .footer-col a:hover{color:var(--azul);}
+  .footer-bottom{border-top:1px solid #e5e7eb;padding:1rem;text-align:center;color:#94a3b8;font-size:.8rem;max-width:1040px;margin:0 auto;}
+
+  .selos{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-top:1rem;}
+  .selo{display:flex;align-items:center;gap:.4rem;background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:.4rem .75rem;font-size:.75rem;color:#475569;font-weight:500;}
+  .selo svg{flex-shrink:0;}
+
+  .logo-img{width:100%;height:auto;max-width:calc(100vw - 60px);object-fit:contain;display:block}
+  .avatar-img{width:48px;height:48px;border-radius:50%;object-fit:cover;display:block;flex:0 0 48px}
+  main{padding-top:88px;width:100%;}
+  section[id]{scroll-margin-top:88px}
+
+  .donation-button{
+    display:block;width:100%;max-width:500px;margin:20px auto;
+    padding:15px 30px;background:#24ca68;color:white;border:none;
+    border-radius:10px;font-size:18px;font-weight:600;cursor:pointer;
+    transition:all 0.3s;font-family:'Inter','Segoe UI',Roboto,sans-serif;
+    box-shadow:0 4px 12px rgba(36,202,104,0.3);text-align:center;
+  }
+  .donation-button:hover{background:#1da854;transform:translateY(-2px);}
+
+  .historia-bloco{padding:1rem 0;border-bottom:1px solid #f1f5f9;}
+  .historia-bloco:last-of-type{border-bottom:none;}
+  .historia-destaque{
+    background:#f0fdf4;border-left:4px solid var(--verde);
+    padding:1rem 1.25rem;border-radius:0 12px 12px 0;margin:1rem 0;
+  }
+  .historia-destaque p{margin:0;color:#166534;font-size:1rem;line-height:1.6;}
+  .historia-tag{
+    display:inline-block;background:#dbeafe;color:#1e40af;
+    font-size:.75rem;font-weight:600;padding:.2rem .6rem;border-radius:999px;
+    margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.5px;
+  }
+
+  .notificacao{
+    position:fixed;top:100px;right:20px;background:white;border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);padding:1rem;
+    display:flex;align-items:center;gap:1rem;z-index:10001;max-width:320px;
+    transform:translateX(400px);opacity:1;transition:transform 0.5s ease,opacity 0.5s ease;
+    border-left:4px solid var(--verde);
+  }
+  .notificacao .avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;}
+  .notificacao .avatar img{width:100%;height:100%;object-fit:cover;}
+  .notificacao .content{flex:1;}
+  .notificacao .content h4{margin:0 0 0.25rem 0;color:var(--azul);font-weight:600;}
+
+  #contato{background:#f8fafc;}
+  .contato-grid{display:grid;gap:1.5rem;grid-template-columns:1fr;}
+  @media(min-width:768px){.contato-grid{grid-template-columns:1fr 1fr;}}
+  .contato-form input,.contato-form textarea{
+    border:1px solid #e5e7eb;border-radius:10px;padding:.85rem 1rem;
+    width:100%;font-size:.95rem;background:#fff;font-family:'Inter',sans-serif;
+    margin-bottom:.75rem;
+  }
+  .contato-form input:focus,.contato-form textarea:focus{
+    outline:none;border-color:var(--verde);box-shadow:0 0 0 2px rgba(46,125,50,.15);
+  }
+  .contato-form textarea{resize:vertical;min-height:110px;}
+
+  #gestaoModal{position:fixed;top:0;left:0;width:100%;height:100%;z-index:10000;display:none;align-items:center;justify-content:center;padding:1rem;box-sizing:border-box;}
+  #gestaoModal.active{display:flex;}
+  #gestaoModal .backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);}
+  #gestaoModal .box{position:relative;z-index:1;width:min(92vw,760px);max-height:90vh;background:#fff;border-radius:16px;box-shadow:0 18px 48px rgba(0,0,0,.16),0 2px 8px rgba(0,0,0,.08);overflow:hidden;display:flex;flex-direction:column;box-sizing:border-box;}
+  #gestaoModal header{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid #e5e7eb;background:#fff;flex-shrink:0;}
+  #gestaoModal h3{margin:0;font-size:1.25rem;color:var(--azul);font-weight:700;}
+  #gestaoModal .close{border:none;background:#f1f5f9;color:#475569;width:36px;height:36px;border-radius:999px;cursor:pointer;font-size:1.25rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  #gestaoModal .close:hover{background:#e2e8f0;}
+  #gestaoModal .content{flex:1;overflow:auto;padding:1.5rem;-webkit-overflow-scrolling:touch;box-sizing:border-box;}
+  #gestaoModal .total{display:flex;align-items:center;justify-content:space-between;background:#f8fafc;border:1px solid #eef2f7;border-radius:12px;padding:1rem 1.25rem;margin:1rem 0 1.5rem;}
+  #gestaoModal .total b{font-size:1.35rem;color:var(--verde);}
+  #gestaoModal table{width:100%;border-collapse:collapse;}
+  #gestaoModal th,#gestaoModal td{padding:0.75rem;text-align:left;border-bottom:1px solid #e5e7eb;}
+  #gestaoModal thead th{color:#64748b;font-weight:600;background:#f8fafc;}
+  #gestaoModal tbody tr:hover{background:#f8fafc;}
+  #gestaoModal tfoot td{padding:1rem 0.75rem;font-weight:700;color:var(--azul);background:#f1f5f9;}
+  #gestaoModal .muted{color:#64748b;font-size:0.9rem;margin:0 0 1rem 0;}
+
+  @media(max-width:767px){
+    .container{padding-left:0;padding-right:0;width:100%;max-width:100%;}
+    .card{margin:0;border-radius:0;box-shadow:none;border-bottom:1px solid #e5e7eb;width:100%;}
+    .card[style*="padding"]{padding-left:1rem !important;padding-right:1rem !important;box-sizing:border-box;}
+    header .wrap{height:64px;padding:0 1rem;}
+    main{padding-top:76px;width:100%;}
+    section[id]{scroll-margin-top:76px;}
+    .grid{gap:0;}
+    .lg-2{grid-template-columns:1fr;}
+    .lg-aside{grid-template-columns:1fr;}
+    h1{font-size:1.35rem !important;line-height:1.3;}
+    h2{font-size:1.15rem !important;}
+    h3{font-size:1.05rem !important;}
+    .btn{padding:1rem 1.5rem !important;font-size:1rem;min-height:48px;}
+    .progress{height:16px;}
+    #heroSlider{aspect-ratio:4/5;min-height:400px;}
+    #heroSlider .slide img,#heroSlider .slide video{max-height:80vh;}
+    #custos{overflow:visible !important;}
+    #custos .card{overflow:visible !important;}
+    #custos table{min-width:100%;font-size:0.8rem;display:table;}
+    #custos th,#custos td{padding:0.75rem 0.5rem;white-space:normal;word-break:break-word;}
+    #listaComentarios li{flex-direction:column;gap:0.75rem;padding:1rem 0;border-bottom:1px solid #e5e7eb;}
+    #listaComentarios li:last-child{border-bottom:none;}
+    .avatar-initials{width:40px;height:40px;font-size:.85rem;flex:0 0 40px;}
+    footer .footer-main{padding:1.5rem 1rem;}
+    .selos{gap:.5rem;}
+    .selo{font-size:.7rem;padding:.35rem .6rem;}
+    #gestaoModal{padding:0;align-items:flex-start;padding-top:env(safe-area-inset-top);}
+    #gestaoModal .box{width:100vw;min-height:100vh;max-height:100vh;border-radius:0;margin:0;}
+    #gestaoModal header{padding:1rem 1.25rem;position:sticky;top:0;background:white;z-index:1;box-shadow:0 2px 4px rgba(0,0,0,0.1);min-height:60px;}
+    #gestaoModal .close{width:44px;height:44px;}
+    #gestaoModal .content{padding:1.25rem;padding-bottom:calc(1.25rem + env(safe-area-inset-bottom));overflow-y:auto;-webkit-overflow-scrolling:touch;}
+    #gestaoModal table{font-size:0.85rem;}
+    #gestaoModal th,#gestaoModal td{padding:0.5rem 0.25rem;}
+    .historia-destaque{margin:1rem 0;padding:.85rem 1rem;}
+    .contato-grid{gap:1rem;}
+  }
+</style>
+
+<!-- Pinterest Tag -->
+<script>
+!function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+pintrk('load','2612932062709',{em:'<user_email_address>'});
+pintrk('page');
+</script>
+<noscript><img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?event=init&tid=2612932062709&pd[em]=<hashed_email_address>&noscript=1"/></noscript>
+
+</head>
+<body>
+  <header class="glass">
+    <div class="container wrap">
+      <div class="wrap">
+        <button id="menuBtn" aria-label="Abrir menu" class="btn"><span class="sr-only">Abrir menu</span>☰</button>
+        <a href="#topo" style="display:flex;align-items:center;gap:.5rem;font-weight:600">
+          <img class="logo-img" src="images/crescendo-com-amor-1.png" alt="Ong Crescendo com amor" width="280" height="68">
+        </a>
+      </div>
+      <nav>
+        <a href="#campanha">Campanha</a>
+        <a href="#historia">História</a>
+        <a href="#custos">Necessidades</a>
+        <a href="#comentarios">Comentários</a>
+        <a href="#contato">Contato</a>
+        <a href="#transparencia" class="btn-blue">Transparência</a>
+      </nav>
+    </div>
+    <div id="drawer">
+      <nav>
+        <a href="#campanha">Campanha</a>
+        <a href="#historia">História</a>
+        <a href="#custos">Necessidades</a>
+        <a href="#comentarios">Comentários</a>
+        <a href="#contato">Contato</a>
+        <a href="#transparencia" style="font-weight:600">Prestação de Contas</a>
+      </nav>
+      <button id="closeDrawer" aria-label="Fechar menu">✕</button>
+    </div>
+    <div id="drawerBackdrop"></div>
+  </header>
+
+  <main id="topo">
+
+    <!-- CAMPANHA -->
+    <section id="campanha" class="container" style="padding-bottom:2rem">
+      <div class="grid lg-2">
+
+        <!-- Slider -->
+        <div class="card" style="overflow:hidden">
+          <div id="heroSlider" role="region" aria-label="Galeria de imagens">
+            <div class="slide active" aria-hidden="false">
+              <img src="images/1fc8ebf7-1b71-42bb-a637-9004d19c100d.png" alt="Allan e seu irmão Guilherme" fetchpriority="high" decoding="async">
+            </div>
+            <div class="slide" aria-hidden="true">
+              <video width="100%" height="100%" controls controlslist="nodownload nofullscreen noremoteplayback" playsinline style="object-fit:contain;">
+                <source src="media/allanefilipe.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+              </video>
+            </div>
+            <button class="navbtn prev" aria-label="Anterior">‹</button>
+            <button class="navbtn next" aria-label="Próximo">›</button>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- Sumário + Doação -->
+        <div class="grid" style="gap:1rem">
+          <div class="card" style="padding:1.25rem 1.5rem">
+            <h1 style="font-size:1.5rem;color:var(--azul);font-weight:800;line-height:1.3">
+              Allan perdeu tudo — pais, avô — e hoje vive para cuidar do irmão Guilherme, que depende dele para tudo ❤️
+            </h1>
+            <p style="color:#475569;margin-top:.5rem">Cada doação garante comida, remédio e um futuro possível para esses dois irmãos.</p>
+
+            <!-- BARRA DE PROGRESSO -->
+            <div style="margin-top:1rem">
+              <div style="display:flex;justify-content:space-between;gap:.75rem;align-items:flex-end">
+                <div>
+                  <p style="font-size:.85rem;color:#64748b;margin:0">Arrecadado</p>
+                  <p id="arrecadadoAtual" style="font-size:1.2rem;font-weight:700;color:var(--verde)">R$ 8.450,00</p>
+                </div>
+                <div style="text-align:right">
+                  <p style="font-size:.85rem;color:#64748b;margin:0">Meta</p>
+                  <p id="metaValor" style="font-size:1.2rem;font-weight:700;color:var(--azul)">R$ 30.000,00</p>
+                </div>
+              </div>
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso da arrecadação" style="margin-top:.5rem">
+                <div id="barra" class="bar"></div>
+              </div>
+              <div style="margin-top:.25rem;font-size:.85rem;color:#64748b">Progresso: <span id="percentual">0%</span></div>
+            </div>
+
+            <!-- PICKER -->
+            <div style="max-width:500px;margin:20px auto;padding:15px;background:#f8f9fa;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+              <select id="mainDonationPicker" style="width:100%;padding:18px;border-radius:12px;border:2px solid #24ca68;font-size:17px;background:#ffffff;color:#555;-webkit-appearance:none;-moz-appearance:none;appearance:none;margin:10px 0;font-weight:400;box-shadow:0 2px 8px rgba(36,202,104,0.2);background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22><path fill=%22%2324ca68%22 d=%22M7 10l5 5 5-5z%22/></svg>');background-repeat:no-repeat;background-position:right 12px center;background-size:20px;font-family:'Inter','Segoe UI',Roboto,sans-serif;cursor:pointer;">
+                <option value="" disabled selected style="color:#999;font-style:italic;">Selecione o valor para doar</option>
+                <option value="10">R$ 10</option>
+                <option value="20">R$ 20</option>
+                <option value="30">R$ 30</option>
+                <option value="50">R$ 50</option>
+                <option value="100">R$ 100</option>
+                <option value="150">R$ 150</option>
+                <option value="200">R$ 200</option>
+                <option value="250">R$ 250</option>
+                <option value="300">R$ 300</option>
+                <option value="500">R$ 500</option>
+                <option value="800">R$ 800</option>
+                <option value="1000">R$ 1000</option>
+              </select>
+              <p style="font-size:14px;color:#24ca68;margin:15px 0;text-align:center;font-weight:500;padding:12px;background:rgba(36,202,104,0.1);border-radius:8px;">
+                ✅ Selecione o valor e ajude em menos de 1 minuto
+              </p>
+            </div>
+
+            <!-- VERSÍCULO -->
+            <div style="background:linear-gradient(135deg,#fff7ed 0%,#ffedd5 100%);border-left:4px solid #ea580c;padding:1.25rem;margin:1.5rem 0;border-radius:0 12px 12px 0;box-shadow:0 2px 8px rgba(234,88,12,0.1);">
+              <p style="margin:0;font-style:italic;color:#9a3412;font-size:1rem;line-height:1.5;text-align:center;">
+                "Amai-vos uns aos outros, como eu vos amei."
+                <br><strong style="color:#0d3a6f;font-size:.9rem;margin-top:.5rem;display:block;">— Jesus (João 13:34)</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- HISTÓRIA -->
+<div class="container">
+  <article id="historia" class="card content-defer" style="padding:1.25rem 1.5rem">
+
+    <span class="historia-tag">Situação urgente</span>
+    <h2 style="font-size:1.4rem;color:var(--azul);font-weight:800;margin-bottom:1rem;line-height:1.3">
+      Perdeu a mãe, o pai e o avô. Hoje, Allan vive apenas para cuidar do irmão — e precisa da sua ajuda.
+    </h2>
+
+    <div class="historia-bloco">
+      <p>Allan é um jovem como tantos outros — mas a vida cobrou dele um preço que nenhum jovem deveria pagar. Em 2019, perdeu a mãe de repente. No ano passado, o pai faleceu em um acidente. Este ano, o avô que o acolheu após ele ficar órfão também se foi.</p>
+      <p>Mas mesmo com toda essa dor, o Allan não parou. Porque ele tem uma razão para continuar: o irmão <strong>Guilherme</strong>, que depende totalmente dele para viver.</p>
+    </div>
+
+    <div class="historia-destaque">
+      <p>💬 <em>"Ele é minha motivação para continuar vivendo."</em> — Allan, sobre o irmão Guilherme.</p>
+    </div>
+
+    <div class="historia-bloco">
+      <p>Guilherme precisa de ajuda para fazer tudo: comer, beber água, tomar banho. Ele enfrenta <strong>crises convulsivas</strong> e depende de cuidados constantes, 24 horas por dia. Allan é o cuidador, o irmão, o pai e a mãe do Gui — tudo ao mesmo tempo.</p>
+      <p>Por causa dessa responsabilidade, <strong>Allan não consegue manter um emprego fixo</strong>. Cada vez que tenta, as crises do irmão ou as demandas diárias do cuidado o impedem de seguir adiante. A única renda da família é o benefício assistencial de Guilherme — que não é suficiente para cobrir nem o básico.</p>
+    </div>
+
+    <div class="historia-destaque">
+      <p>💔 Quando conhecemos a história dos dois, Allan havia feito um apelo nas redes sociais: estava endividado com o aluguel e sem dinheiro para comida. Ele pediu ajuda sem vergonha — porque o Gui precisava.</p>
+    </div>
+
+    <div class="historia-bloco">
+      <p>A história deles chegou até nós através das redes sociais. O apelo do Allan era simples e honesto: dívida de aluguel acumulada, geladeira vazia, sem perspectiva de renda. Ele não pediu por si mesmo — pediu pelo Guilherme.</p>
+      <p>Mesmo com a ajuda do tio, <strong>a situação tem sido muito difícil de sustentar</strong>. Os custos com cuidados especiais, medicamentos, alimentação adequada e moradia superam de longe o benefício que o Gui recebe.</p>
+      <p>Não existe aqui uma escolha fácil. Allan não pode trabalhar sem deixar o irmão desamparado. E não pode deixar o irmão desamparado sem que a vida de Guilherme esteja em risco.</p>
+    </div>
+
+    <button class="donation-button">❤️ QUERO AJUDAR ALLAN E GUILHERME AGORA</button>
+
+    <div class="historia-bloco">
+      <p>A campanha precisa cobrir necessidades urgentes e estruturais para que esses dois irmãos tenham condições dignas de viver:</p>
+      <ul style="color:#334155;padding-left:1.25rem;line-height:2.2;margin:.5rem 0;">
+        <li><strong>Aluguel em atraso e meses futuros</strong> — para que não percam o teto que têm</li>
+        <li><strong>Alimentação mensal</strong> — o básico para os dois não passarem fome</li>
+        <li><strong>Fraldas, higiene e cuidados especiais</strong> do Guilherme</li>
+        <li><strong>Medicamentos e consultas médicas</strong> para o controle das crises convulsivas</li>
+        <li><strong>Conta de luz e água</strong> — despesas essenciais que estão atrasadas</li>
+        <li><strong>Reserva de emergência</strong> para crises de saúde do Guilherme</li>
+      </ul>
+      <p>Cada real doado vai diretamente para a manutenção da vida digna desses dois irmãos. A prestação de contas é pública e atualizada — você pode acompanhar tudo nesta mesma página.</p>
+    </div>
+
+    <div class="historia-bloco">
+      <p>O Guilherme não entende muito bem o peso do que acontece ao redor. Mas sente o cuidado do irmão em cada gesto — cada colher de comida, cada banho, cada vez que o Allan está ali ao lado quando a crise chega.</p>
+      <p>E o Allan? Ele carrega uma dor enorme por dentro. Mas escolheu, todo dia, transformar essa dor em amor pelo irmão. <strong>Isso é o que o mantém de pé.</strong></p>
+    </div>
+
+    <div class="historia-destaque">
+      <p>✅ <strong>Essa história tem solução.</strong> Com apoio, Allan pode estabilizar a situação da família e seguir cuidando do Guilherme com dignidade. O que não pode acontecer é o abandono por falta de recursos.</p>
+    </div>
+
+    <div class="historia-bloco">
+      <p>Se esta página chegou até você, não foi por acaso. Você pode ser parte dessa história. Uma doação de qualquer valor — R$ 10, R$ 30, R$ 50 — somada à de centenas de outras pessoas, é o que sustenta esses dois irmãos agora.</p>
+      <p>E se hoje não for possível doar, <strong>compartilhe.</strong> Poste nos seus grupos, mande no WhatsApp para quem você sabe que tem coração generoso. A mensagem certa, chegando à pessoa certa, pode ser o que falta.</p>
+    </div>
+
+    <div class="historia-destaque">
+      <p>🙏 <strong>Se você pode doar, doe agora.</strong> Se não puder, compartilhe. Uma mensagem sua pode mudar a vida de dois irmãos.</p>
+    </div>
+
+    <button class="donation-button">❤️ QUERO AJUDAR ALLAN E GUILHERME AGORA</button>
+
+    <p style="color:#64748b;font-size:.9rem;text-align:center;margin-top:1.5rem;line-height:1.7;">
+      Sua doação vai diretamente para o sustento de Allan e Guilherme,<br>
+      acompanhada de <a href="#transparencia" style="color:var(--verde);font-weight:600;">prestação de contas transparente</a> e atualizada mensalmente.
+    </p>
+
+  </article>
+</div>
+
+    <!-- CUSTOS + COMENTÁRIOS + ASIDE -->
+    <section class="container" style="padding-bottom:2rem">
+      <div class="grid lg-aside">
+        <div class="grid" style="gap:1rem;min-width:0">
+
+          <!-- Custos -->
+          <section id="custos" class="card content-defer" style="padding:1rem">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.5rem;flex-wrap:wrap">
+              <h2 style="font-size:1.1rem;color:var(--azul);font-weight:700;margin:0">Necessidades da Família</h2>
+              <span style="font-size:.75rem;color:#64748b">Atualizado mensalmente</span>
+            </div>
+            <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+              <table style="width:100%;border-collapse:collapse;min-width:300px;">
+                <thead style="color:#64748b;text-align:left;font-size:.8rem">
+                  <tr>
+                    <th style="padding:.5rem .25rem;font-weight:600">Item</th>
+                    <th style="padding:.5rem .25rem;font-weight:600">Descrição</th>
+                    <th style="padding:.5rem .25rem;font-weight:600;text-align:right">Valor</th>
+                  </tr>
+                </thead>
+                <tbody style="color:#334155;font-size:.85rem">
+                  <tr style="background:#f8fafc">
+                    <td style="padding:.5rem .25rem;font-weight:600">Aluguel e dívidas</td>
+                    <td style="padding:.5rem .25rem">Meses em atraso + próximos meses</td>
+                    <td style="padding:.5rem .25rem;text-align:right;white-space:nowrap">R$ 8.000</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:.5rem .25rem;font-weight:600">Alimentação</td>
+                    <td style="padding:.5rem .25rem">Cesta básica e alimentação especial (6 meses)</td>
+                    <td style="padding:.5rem .25rem;text-align:right;white-space:nowrap">R$ 4.800</td>
+                  </tr>
+                  <tr style="background:#f8fafc">
+                    <td style="padding:.5rem .25rem;font-weight:600">Cuidados do Guilherme</td>
+                    <td style="padding:.5rem .25rem">Fraldas, higiene e materiais de cuidado</td>
+                    <td style="padding:.5rem .25rem;text-align:right;white-space:nowrap">R$ 3.600</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:.5rem .25rem;font-weight:600">Medicamentos e consultas</td>
+                    <td style="padding:.5rem .25rem">Controle das crises convulsivas</td>
+                    <td style="padding:.5rem .25rem;text-align:right;white-space:nowrap">R$ 6.000</td>
+                  </tr>
+                  <tr style="background:#f8fafc">
+                    <td style="padding:.5rem .25rem;font-weight:600">Contas básicas</td>
+                    <td style="padding:.5rem .25rem">Água, luz e despesas essenciais</td>
+                    <td style="padding:.5rem .25rem;text-align:right;white-space:nowrap">R$ 4.800</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:.5rem .25rem;font-weight:600">Reserva de emergência</td>
+                    <td style="padding:.5rem .25rem">Para crises de saúde inesperadas</td>
+                    <td style="padding:.5rem .25rem;text-align:right;white-space:nowrap">R$ 2.800</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="2" style="padding:.75rem .25rem;text-align:right;font-weight:700;color:var(--azul)">Total</td>
+                    <td style="padding:.75rem .25rem;text-align:right;font-weight:800;color:var(--azul);white-space:nowrap">R$ 30.000</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem">
+              <div class="card" style="padding:.75rem;border:1px solid #eef2f7">
+                <p style="font-size:.8rem;color:#64748b;margin:0">Arrecadado</p>
+                <p style="font-size:1.2rem;font-weight:700;color:var(--verde);margin:.2rem 0 0">R$ 8.450</p>
+              </div>
+              <div class="card" style="padding:.75rem;border:1px solid #eef2f7">
+                <p style="font-size:.8rem;color:#64748b;margin:0">Falta arrecadar</p>
+                <p style="font-size:1.2rem;font-weight:700;color:var(--azul);margin:.2rem 0 0">R$ 21.550</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Comentários -->
+          <section id="comentarios" class="card content-defer" style="padding:1.25rem 1.5rem">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap">
+              <h2 style="font-size:1.25rem;color:var(--azul);font-weight:700">Mensagens de Apoio</h2>
+              <span style="font-size:.85rem;color:#64748b">Junte-se a essa corrente do bem</span>
+            </div>
+            <ul id="listaComentarios" style="list-style:none;padding:0;margin:0;">
+              <li style="padding:1rem 0;border-bottom:1px solid #e5e7eb;">
+                <div style="display:flex;gap:1rem;align-items:flex-start;">
+                  <div class="avatar-initials" style="background:#0d3a6f;" aria-hidden="true">CS</div>
+                  <div style="flex:1;min-width:0;">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;">
+                      <p style="margin:0;font-weight:600;color:var(--azul)">Carla Souza</p>
+                      <span style="font-size:.75rem;color:#94a3b8">doou agora há pouco</span>
+                    </div>
+                    <p style="color:#334155;margin:.25rem 0 0">Meu coração foi partido ao ler essa história. Que Deus abençoe esse jovem guerreiro e o Guilherme. Doei o quanto pude.</p>
+                  </div>
+                </div>
+              </li>
+              <li style="padding:1rem 0;border-bottom:1px solid #e5e7eb;">
+                <div style="display:flex;gap:1rem;align-items:flex-start;">
+                  <div class="avatar-initials" style="background:#2e7d32;" aria-hidden="true">RM</div>
+                  <div style="flex:1;min-width:0;">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;">
+                      <p style="margin:0;font-weight:600;color:var(--azul)">Ricardo Melo</p>
+                      <span style="font-size:.75rem;color:#94a3b8">doou há 45 minutos</span>
+                    </div>
+                    <p style="color:#334155;margin:.25rem 0 0">Que exemplo de amor de irmão. Compartilhei com todo o meu grupo de WhatsApp. Vamos ajudar!</p>
+                  </div>
+                </div>
+              </li>
+              <li style="padding:1rem 0;border-bottom:1px solid #e5e7eb;">
+                <div style="display:flex;gap:1rem;align-items:flex-start;">
+                  <div class="avatar-initials" style="background:#7c3aed;" aria-hidden="true">AP</div>
+                  <div style="flex:1;min-width:0;">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;">
+                      <p style="margin:0;font-weight:600;color:var(--azul)">Ana Paula</p>
+                      <span style="font-size:.75rem;color:#94a3b8">cuidadora de pessoa com deficiência</span>
+                    </div>
+                    <p style="color:#334155;margin:.25rem 0 0">Sei o quanto é difícil ser cuidador em tempo integral. O Allan é muito mais do que um irmão — é um herói. Força para os dois!</p>
+                  </div>
+                </div>
+              </li>
+              <li style="padding:1rem 0;">
+                <div style="display:flex;gap:1rem;align-items:flex-start;">
+                  <div class="avatar-initials" style="background:#b45309;" aria-hidden="true">JO</div>
+                  <div style="flex:1;min-width:0;">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;">
+                      <p style="margin:0;font-weight:600;color:var(--azul)">Jorge Oliveira</p>
+                      <span style="font-size:.75rem;color:#94a3b8">doou há 2 horas</span>
+                    </div>
+                    <p style="color:#334155;margin:.25rem 0 0">Não conhecia essa história. Que situação difícil. Espero que muita gente veja isso e ajude. Minha parte já foi feita. ❤️</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Aside: Transparência + Compartilhar -->
+          <aside class="grid" style="gap:1.5rem;min-width:0">
+            <div id="transparencia" class="card" style="padding:1.25rem 1.5rem">
+              <h3 style="font-size:1.1rem;color:var(--azul);font-weight:700">Prestação de Contas</h3>
+              <p style="color:#334155">Acompanhe como os recursos estão sendo utilizados, com atualizações periódicas.</p>
+              <button id="btnPrestacao" class="btn btn-blue" style="margin-top:.75rem;width:100%">Ver as Gestões</button>
+            </div>
+            <div class="card" style="padding:1.25rem 1.5rem">
+              <h3 style="font-size:1.1rem;color:var(--azul);font-weight:700">Compartilhe com seus amigos</h3>
+              <p style="color:#334155">Espalhe a causa e multiplique o alcance.</p>
+              <button id="btnCompartilhar" class="btn btn-outline" style="margin-top:.75rem;width:100%">Compartilhar agora</button>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTATO -->
+    <section id="contato" style="padding:2.5rem 0;">
+      <div class="container">
+        <div style="max-width:700px;margin:0 auto;padding:0 1rem;">
+          <h2 style="font-size:1.3rem;color:var(--azul);font-weight:700;margin-bottom:.5rem;">Entre em Contato</h2>
+          <p style="color:#475569;margin-bottom:1.5rem;">Dúvidas sobre a campanha, parceria ou como ajudar de outras formas? Fale com a gente.</p>
+          <div class="contato-grid">
+            <div class="contato-form">
+              <input type="text" placeholder="Seu nome completo" aria-label="Nome">
+              <input type="email" placeholder="Seu e-mail" aria-label="E-mail">
+              <textarea placeholder="Sua mensagem..." aria-label="Mensagem"></textarea>
+              <button class="btn btn-blue" style="width:100%;padding:.9rem;font-size:1rem;" onclick="showToast('Mensagem enviada! Em breve retornaremos.')">Enviar mensagem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal de Gestão -->
+  <div id="gestaoModal" role="dialog" aria-modal="true" aria-labelledby="gestaoTitle" aria-describedby="gestaoDesc">
+    <div class="backdrop"></div>
+    <div class="box">
+      <header>
+        <h3 id="gestaoTitle">Prestação de Contas</h3>
+        <button class="close" type="button" aria-label="Fechar">×</button>
+      </header>
+      <div class="content">
+        <p id="gestaoDesc" class="muted">Acompanhe as despesas já cobertas pela arrecadação.</p>
+        <div class="total">
+          <span>Total já utilizado</span>
+          <b id="gestaoTotal">R$ 0,00</b>
+        </div>
+        <table aria-label="Lista de despesas já cobertas">
+          <thead><tr><th>Item</th><th>Descrição</th><th style="text-align:right">Valor</th></tr></thead>
+          <tbody id="gestaoTabela"></tbody>
+          <tfoot><tr><td colspan="2" style="text-align:right">Total</td><td id="gestaoTotalFoot" style="text-align:right">R$ 0,00</td></tr></tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="hidden">
+    <div class="btn-blue" style="padding:.75rem 1rem;border-radius:12px">Ação realizada!</div>
+  </div>
+
+  <!-- FOOTER COMPLETO -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-col">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;">
+          <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="g2" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#2e7d32"/><stop offset="100%" stop-color="#1f6a22"/></linearGradient></defs><circle cx="24" cy="24" r="22" fill="url(#g2)"/><path d="M24 13c5 6 9 8 9 13a9 9 0 0 1-18 0c0-5 4-7 9-13z" fill="#fff" opacity=".95"/></svg>
+          <span style="font-weight:700;color:var(--azul);font-size:.95rem;">Ong Crescendo com Amor</span>
+        </div>
+        <p>CNPJ: 13.654.424/0001-89</p>
+        <p>Rua José Ozelame, 653 — Centro</p>
+        <p>Rio Rufino – SC, 88658-000</p>
+        <p><a href="/cdn-cgi/l/email-protection#1d7e7273697c69725d7e6f786e7e787379727e72707c70726f33726f7a337f6f"><span class="__cf_email__" data-cfemail="44272b2a3025302b042736213727212a202b272b2925292b366a2b36236a2636">[email&#160;protected]</span></a></p>
+        <p style="margin-top:.5rem;font-size:.8rem;color:#94a3b8;">Organização sem fins lucrativos registrada e regularizada.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="#campanha">Campanha</a>
+        <a href="#historia">História de Allan e Guilherme</a>
+        <a href="#custos">Necessidades</a>
+        <a href="#transparencia">Prestação de Contas</a>
+        <a href="#contato">Fale Conosco</a>
+        <a href="#" onclick="return false;" style="margin-top:.5rem;color:#94a3b8;font-size:.8rem;">Política de Privacidade</a>
+      </div>
+      <div class="footer-col">
+        <h4>Pagamento seguro</h4>
+        <p style="font-size:.82rem;color:#64748b;margin-bottom:.75rem;">Suas informações são protegidas com criptografia SSL e seus dados não são compartilhados com terceiros.</p>
+        <div class="selos">
+          <div class="selo"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>SSL Seguro</div>
+          <div class="selo"><svg width="14" height="14" viewBox="0 0 24 24" fill="#32bcad"><path d="M17.5 6.5l-3 3-2-2-3 3m0 0l-3 3 2 2 3-3m0 0l3 3 2-2-3-3"/></svg>PIX oficial</div>
+          <div class="selo"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d3a6f" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>LGPD</div>
+          <div class="selo"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Dados criptografados</div>
+        </div>
+        <p style="font-size:.78rem;color:#94a3b8;margin-top:.75rem;">Ao realizar uma doação você concorda com nossa Política de Privacidade. Seus dados são utilizados exclusivamente para processar a transação.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin:0;">© <span id="ano"></span> Ong Crescendo com Amor — Todos os direitos reservados. | CNPJ 13.654.424/0001-89</p>
+    </div>
+  </footer>
+
+  <!-- MODAL DE DOAÇÃO -->
+  <div id="donationModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:1000;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;">
+    <div style="background:white;border-radius:20px;max-width:400px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 10px 40px rgba(0,0,0,0.2);">
+      <div style="padding:25px 25px 15px 25px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;">
+        <h3 style="margin:0;color:#24ca68;font-size:22px;font-weight:600;">Doe para Allan e Guilherme</h3>
+        <button id="closeModal" style="background:none;border:none;font-size:28px;color:#999;cursor:pointer;padding:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center;line-height:1;">×</button>
+      </div>
+      <div style="padding:25px;">
+        <form id="donationForm" method="post" novalidate style="margin:0;padding:0;" autocomplete="on">
+          <div style="margin-bottom:20px;">
+            <label style="display:block;margin-bottom:8px;color:#555;font-size:14px;font-weight:500;">Seu nome completo *</label>
+            <input type="text" id="donorName" name="name" autocomplete="name" placeholder="Digite seu nome completo" required style="width:100%;padding:15px;border-radius:12px;border:2px solid #ddd;font-size:15px;background:#fff;color:#555;box-sizing:border-box;font-family:'Segoe UI',Roboto,sans-serif;transition:all 0.3s;margin-bottom:15px;" onfocus="this.style.borderColor='#24ca68'" onblur="this.style.borderColor='#ddd'">
+            <label style="display:block;margin-bottom:8px;color:#555;font-size:14px;font-weight:500;">Seu e-mail *</label>
+            <input type="email" id="donorEmail" name="email" autocomplete="email" placeholder="Digite seu e-mail" required style="width:100%;padding:15px;border-radius:12px;border:2px solid #ddd;font-size:15px;background:#fff;color:#555;box-sizing:border-box;font-family:'Segoe UI',Roboto,sans-serif;transition:all 0.3s;" onfocus="this.style.borderColor='#24ca68'" onblur="this.style.borderColor='#ddd'">
+            <div id="cpfContainer" style="display:none;margin-top:15px;">
+              <label style="display:block;margin-bottom:8px;color:#555;font-size:14px;font-weight:500;">Seu CPF/CNPJ *</label>
+              <input type="text" id="donorCpf" name="cpf" placeholder="Digite seu CPF ou CNPJ" style="width:100%;padding:15px;border-radius:12px;border:2px solid #ddd;font-size:15px;background:#fff;color:#555;box-sizing:border-box;font-family:'Segoe UI',Roboto,sans-serif;transition:all 0.3s;" onfocus="this.style.borderColor='#24ca68'" onblur="this.style.borderColor='#ddd'">
+              <span style="display:block;font-size:12px;color:#999;margin-top:5px;font-style:italic;">(Obrigatório para doações a partir de R$ 500)</span>
+            </div>
+            <div style="margin-top:15px;position:relative;">
+              <label style="display:block;margin-bottom:8px;color:#555;font-size:14px;font-weight:500;">Deixe uma mensagem de apoio (opcional)</label>
+              <textarea id="donorMessage" rows="2" placeholder="Escreva algo inspirador..." style="width:100%;padding:15px;padding-right:45px;border-radius:12px;border:2px solid #ddd;font-size:14px;background:#fff;color:#555;box-sizing:border-box;font-family:'Segoe UI',Roboto,sans-serif;transition:all 0.3s;resize:none;"></textarea>
+              <p style="margin:5px 0 0 0;font-size:12px;color:#999;font-style:italic;">(Opcional)</p>
+            </div>
+            <div style="display:flex;align-items:center;margin-top:15px;flex-wrap:wrap;">
+              <input type="checkbox" id="anonymousCheckbox" style="margin-right:10px;width:18px;height:18px;cursor:pointer;">
+              <label for="anonymousCheckbox" style="font-size:14px;color:#666;cursor:pointer;">Doação anônima</label>
+              <span style="font-size:12px;color:#999;margin-left:10px;font-style:italic;">(Nome e e-mail NÃO serão divulgados)</span>
+            </div>
+          </div>
+          <div style="margin-bottom:25px;">
+            <label style="display:block;margin-bottom:8px;color:#555;font-size:14px;font-weight:500;">Selecione o valor da doação *</label>
+            <select id="modalDonationPicker" style="width:100%;padding:18px;border-radius:12px;border:2px solid #24ca68;font-size:16px;background:#ffffff;color:#555;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-weight:500;box-shadow:0 2px 8px rgba(36,202,104,0.2);background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22%2324ca68%22><path d=%22M7 10l5 5 5-5z%22/></svg>');background-repeat:no-repeat;background-position:right 12px center;background-size:20px;font-family:'Segoe UI',Roboto,sans-serif;cursor:pointer;">
+              <option value="" disabled selected>Escolha um valor</option>
+              <option value="10">R$ 10</option>
+              <option value="20">R$ 20</option>
+              <option value="30">R$ 30</option>
+              <option value="50">R$ 50</option>
+              <option value="100">R$ 100</option>
+              <option value="150">R$ 150</option>
+              <option value="200">R$ 200</option>
+              <option value="250">R$ 250</option>
+              <option value="300">R$ 300</option>
+              <option value="500">R$ 500</option>
+              <option value="800">R$ 800</option>
+              <option value="1000">R$ 1000</option>
+            </select>
+          </div>
+        </form>
+        <button id="generatePixBtn" style="width:100%;padding:18px;background:#24ca68;color:white;border:none;border-radius:12px;font-size:17px;font-weight:600;cursor:pointer;transition:all 0.3s;margin-top:5px;font-family:'Segoe UI',Roboto,sans-serif;box-shadow:0 4px 12px rgba(36,202,104,0.3);" onmouseover="this.style.backgroundColor='#1da854'" onmouseout="this.style.backgroundColor='#24ca68'">
+          Gerar Código PIX
+        </button>
+        <div id="pixResultArea" style="display:none;margin-bottom:20px;">
+          <div style="background:#f8f9fa;padding:20px;border-radius:12px;border:1px solid #ddd;text-align:center;">
+            <div style="margin-bottom:15px;"><img id="qrCodeImage" style="width:180px;height:180px;display:block;margin:0 auto;"></div>
+            <div id="pixTimer" style="margin-bottom:20px;display:none;">
+              <span style="background:#fff3cd;color:#856404;border:1px solid #ffeeba;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700;display:inline-block;">⏳ Expira em: <span id="timeCount">10:00</span></span>
+            </div>
+            <p style="margin:0 0 8px 0;color:#555;font-size:14px;text-align:left;">Código PIX (copia e cola):</p>
+            <div style="background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px;margin-bottom:15px;font-family:monospace;font-size:13px;word-break:break-all;text-align:left;color:#333;user-select:all;" id="pixCodeText"></div>
+            <button id="copyPixButton" style="width:100%;padding:14px;background:#24ca68;color:white;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:'Segoe UI',Roboto,sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;text-transform:uppercase;letter-spacing:0.5px;">COPIAR CÓDIGO PIX</button>
+            <p style="margin:15px 0 0 0;color:#999;font-size:12px;">Código válido por 30 minutos</p>
+          </div>
+        </div>
+        <div style="margin-top:25px;">
+          <h4 style="margin:0 0 15px 0;color:#333;font-size:16px;font-weight:600;">Como realizar o pagamento:</h4>
+          <div style="background:#f8f9fa;padding:20px;border-radius:12px;border-left:4px solid #24ca68;">
+            <ol style="margin:0;padding-left:20px;color:#555;font-size:14px;line-height:1.8;">
+              <li style="margin-bottom:12px;padding-left:8px;"><strong>Copie</strong> o código PIX que foi gerado</li>
+              <li style="margin-bottom:12px;padding-left:8px;"><strong>Abra</strong> o aplicativo do seu banco</li>
+              <li style="margin-bottom:12px;padding-left:8px;"><strong>Na aba PIX</strong>, selecione <strong>"PIX copia e cola"</strong></li>
+              <li style="margin-bottom:12px;padding-left:8px;"><strong>Cole o código</strong> e finalize o pagamento</li>
+            </ol>
+            <p style="margin:15px 0 0 0;color:#24ca68;font-weight:500;font-size:14px;text-align:center;padding-top:10px;border-top:1px solid #e0e0e0;">Sua generosidade salva vidas</p>
+          </div>
+        </div>
+        <p style="font-size:13px;color:#666;margin:20px 0 0 0;text-align:center;padding:15px;background:rgba(36,202,104,0.05);border-radius:8px;line-height:1.5;">
+          Após clicar em "Gerar Código PIX", a doação será criada e o código PIX será gerado.
+        </p>
+      </div>
+    </div>
+  </div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Confetti
+  document.addEventListener("DOMContentLoaded",()=>{
+    const s=document.createElement("script");
+    s.src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js";
+    document.head.appendChild(s);
+  });
+
+  const fmt=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+  let meta=30000, arrecadado=8450;
+
+  function exibirNotificacao(nome,image,valor){
+    const n=document.createElement("div");
+    n.className="notificacao";
+    n.innerHTML=`<div class="avatar"><img src="${image}" alt="${nome}"></div><div class="content"><h4>${nome}</h4> Acabou de doar <strong>${fmt.format(valor)}</strong>.</div>`;
+    document.body.appendChild(n);
+    setTimeout(()=>{n.style.transform="translateX(0)";},100);
+    setTimeout(()=>{
+      if(typeof confetti==='function'){
+        const r=n.getBoundingClientRect();
+        confetti({particleCount:100,spread:70,origin:{x:(r.left+r.width/2)/window.innerWidth,y:(r.top+r.height/2)/window.innerHeight}});
+      }
+    },500);
+    setTimeout(()=>{
+      n.style.transform="translateX(400px)";n.style.opacity="0";
+      setTimeout(()=>{if(n.parentNode)n.parentNode.removeChild(n);},500);
+    },5000);
+  }
+
+  const NOMES_DOADORES=['Ana Souza','Bruno Lima','Carla Mendes','Diego Rocha','Eduarda Pires','Felipe Araújo','Gabriela Nunes','Henrique Alves','Isabela Castro','João Pedro','Karen Duarte','Lucas Teixeira','Mariana Santos','Rafael Costa','Juliana Oliveira','Pedro Henrique','Amanda Silva','Thiago Almeida','Larissa Ferreira','Vinícius Rodrigues','Patrícia Martins','Daniel Carvalho','Beatriz Sousa','Marcos Antônio','Camila Rabelo','Guilherme Torres','Fernanda Lopes','Ricardo Nascimento','Tatiane Monteiro','Leonardo Dias','Priscila Andrade','Roberto Lima','Vanessa Cardoso','Alexandre Barbosa','Simone Ribeiro','André Cunha','Natália Fonseca','Sérgio Moura','Aline Moreira','Fábio Correia','Jéssica Miranda','Rodrigo Santana','Bianca Neves','Caio Peixoto','Débora Machado','Erick Freitas','Giovana Tavares','Hugo Medeiros','Igor Prado','Jaqueline Reis','Kleber Soares','Lorena Vasconcelos','Mateus Brito','Nathalia Campos','Otávio Rios','Paula Dantas','Quezia Faria','Renato Azevedo','Sabrina Melo','Tomás Aguiar','Ursula Porto','Victor Hugo','Wesley Galvão','Yasmin Caldas','Zélia Pimentel','Adriano Xavier','Bárbara Luz','César Wagner','Dário Quintana','Elaine Siqueira','Francisco Júnior','Gustavo Duarte','Heloísa Pacheco','Ivanildo Santos','Joana Bastos','Kevin Morais','Lívia Figueiredo','Mauro César','Noemi Abreu','Osvaldo Cruz','Paloma Dinis','Quésia Rosa','Raquel Boaventura','Samuel Vargas','Tainá Furtado','Ubirajara Leal','Valéria Montes','Wagner Pinho','Xavier Toledo','Yuri Cordeiro','Zara Mendonça','Alice Camargo','Breno Lacerda','Cíntia Falcão','Dênis Barros','Estela Marques','Felipe Santos','Gisele Alencar','Heitor Pimenta','Iara Negromonte','Júlio César','Kátia Lemos','Luan Pereira','Mirela Sampaio','Norberto Teixeira','Olívia Ramalho','Paulo Sérgio','Quintino Silva','Rogério Maciel','Sueli Costa','Tiago Lopes','Úrsula Rocha','Vitor Manuel','Wanessa Andrade','Xande Carvalho','Yasmin Oliveira','Zacarias Neto'];
+  const VALORES_DOACOES=[{valor:20,peso:7},{valor:30,peso:6},{valor:50,peso:5},{valor:100,peso:4},{valor:150,peso:3},{valor:200,peso:2},{valor:500,peso:1}];
+
+  function valorAleatorio(){const t=VALORES_DOACOES.reduce((s,i)=>s+i.peso,0);let r=Math.random()*t;for(const i of VALORES_DOACOES){r-=i.peso;if(r<=0)return i.valor;}return VALORES_DOACOES[VALORES_DOACOES.length-1].valor;}
+  function nomeAleatorio(){return NOMES_DOADORES[Math.floor(Math.random()*NOMES_DOADORES.length)];}
+  function criarNotificacaoDoacao(){exibirNotificacao(nomeAleatorio(),"https://placehold.co/96x96?text="+nomeAleatorio().charAt(0),valorAleatorio());}
+  setInterval(criarNotificacaoDoacao,25000);
+
+  // Progresso
+  const barra=document.getElementById('barra'),pct=document.getElementById('percentual'),arAt=document.getElementById('arrecadadoAtual'),metaEl=document.getElementById('metaValor');
+  function atualizarProgresso(animated=true){
+    const p=Math.min(100,Math.round((arrecadado/meta)*100));
+    if(arAt)arAt.textContent=fmt.format(arrecadado);
+    if(metaEl)metaEl.textContent=fmt.format(meta);
+    if(pct)pct.textContent=p+'%';
+    if(barra){if(animated)barra.style.transition='width .6s ease';barra.style.width=p+'%';}
+    const pb=document.querySelector('[role="progressbar"]');
+    if(pb)pb.setAttribute('aria-valuenow',String(p));
+  }
+  atualizarProgresso(true);
+  window.addEventListener("load",()=>atualizarProgresso(false));
+
+  // Modal Gestão
+  ;(function(){
+    const rsGestaoDados=[
+      {item:"Aluguel em atraso",descricao:"Quitação de meses de dívida",valor:3200.00},
+      {item:"Alimentação",descricao:"Cesta básica e alimentação especial",valor:1600.00},
+      {item:"Cuidados do Guilherme",descricao:"Fraldas, higiene e materiais de cuidado",valor:1200.00},
+      {item:"Medicamentos",descricao:"Controle das crises convulsivas",descricao:"Controle das crises convulsivas",valor:2250.00}
+    ];
+    const BRL=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+    const modal=document.getElementById('gestaoModal');
+    if(!modal)return;
+    const tbody=document.getElementById('gestaoTabela'),totalTop=document.getElementById('gestaoTotal'),totalFoot=document.getElementById('gestaoTotalFoot'),btnClose=modal.querySelector('.close');
+    let modalIsOpen=false;
+
+    function fill(dados){
+      if(!tbody)return;
+      tbody.innerHTML='';let total=0;
+      dados.forEach(d=>{
+        total+=Number(d.valor)||0;
+        const tr=document.createElement('tr');
+        tr.innerHTML=`<td><strong>${d.item}</strong></td><td>${d.descricao||''}</td><td style="text-align:right;font-weight:600">${BRL.format(d.valor||0)}</td>`;
+        tbody.appendChild(tr);
+      });
+      if(totalTop)totalTop.textContent=BRL.format(total);
+      if(totalFoot)totalFoot.textContent=BRL.format(total);
+    }
+
+    function handleBackButton(e){if(modalIsOpen){e.preventDefault();closeModal();if(history.state&&history.state.modalOpen)history.back();}}
+    function openModal(){fill(rsGestaoDados);modal.style.display='flex';setTimeout(()=>modal.classList.add('active'),10);document.body.style.overflow='hidden';history.pushState({modalOpen:true},'');modalIsOpen=true;window.addEventListener('popstate',handleBackButton);}
+    function closeModal(){modal.classList.remove('active');setTimeout(()=>modal.style.display='none',300);document.body.style.overflow='';modalIsOpen=false;window.removeEventListener('popstate',handleBackButton);}
+
+    if(btnClose)btnClose.addEventListener('click',closeModal);
+    const backdrop=modal.querySelector('.backdrop');
+    if(backdrop)backdrop.addEventListener('click',closeModal);
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('active'))closeModal();});
+    const gatilho=document.getElementById('btnPrestacao');
+    if(gatilho)gatilho.addEventListener('click',openModal);
+    window.addEventListener('load',function(){if(history.state&&history.state.modalOpen)history.replaceState(null,'');});
+  })();
+
+  // Compartilhar
+  function compartilhar(){
+    const d={title:'Ajude Allan e Guilherme — Ong Crescendo com Amor',text:'Dois irmãos precisam de ajuda. Junte-se a essa corrente do bem!',url:location.href};
+    if(navigator.share){navigator.share(d).catch(()=>{});}
+    else{navigator.clipboard.writeText(d.url).then(()=>showToast('Link copiado!')).catch(()=>showToast('Não foi possível compartilhar'));}
+  }
+  const btnCompartilhar=document.getElementById('btnCompartilhar');
+  if(btnCompartilhar)btnCompartilhar.addEventListener('click',compartilhar);
+
+  // Drawer
+  const menuBtn=document.getElementById('menuBtn'),drawer=document.getElementById('drawer'),overlay=document.getElementById('drawerBackdrop'),closeBtn=document.getElementById('closeDrawer');
+  function openDrawer(){drawer.classList.add('active');overlay.classList.add('active');document.body.style.overflow='hidden';}
+  function closeDrawer(){drawer.classList.remove('active');overlay.classList.remove('active');document.body.style.overflow='';}
+  if(menuBtn)menuBtn.addEventListener('click',openDrawer);
+  if(closeBtn)closeBtn.addEventListener('click',closeDrawer);
+  if(overlay)overlay.addEventListener('click',closeDrawer);
+  if(drawer)drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDrawer));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('active')){closeDrawer();menuBtn&&menuBtn.focus();}});
+
+  // Scroll suave
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');
+    if(id&&id!=='#'){const el=document.querySelector(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}}
+  }));
+
+  // Toast
+  const toast=document.getElementById('toast');
+  let toastTimer;
+  function showToast(t){
+    if(!toast)return;
+    clearTimeout(toastTimer);
+    toast.querySelector('div').textContent=t;
+    toast.classList.remove('hidden');
+    toastTimer=setTimeout(()=>toast.classList.add('hidden'),2200);
+  }
+
+  // Ano
+  const spanAno=document.getElementById('ano');
+  if(spanAno)spanAno.textContent=new Date().getFullYear();
+
+  // Slider
+  (function(){
+    const root=document.getElementById('heroSlider');if(!root)return;
+    const slides=[...root.querySelectorAll('.slide')];if(!slides.length)return;
+    const prev=root.querySelector('.prev'),next=root.querySelector('.next'),dots=root.querySelector('.dots');
+    let i=0,timer=null;
+    function go(n){i=(n+slides.length)%slides.length;slides.forEach((s,idx)=>{s.classList.toggle('active',idx===i);s.setAttribute('aria-hidden',idx!==i);});if(dots)dots.querySelectorAll('button').forEach((b,idx)=>b.classList.toggle('active',idx===i));}
+    if(dots){dots.innerHTML='';slides.forEach((_,idx)=>{const b=document.createElement('button');b.type='button';b.className='dot';b.addEventListener('click',()=>{go(idx);start();});dots.appendChild(b);});}
+    function nextS(){go(i+1);}function prevS(){go(i-1);}
+    function start(){stop();timer=setInterval(nextS,4000);}function stop(){if(timer){clearInterval(timer);timer=null;}}
+    prev&&prev.addEventListener('click',()=>{prevS();start();});
+    next&&next.addEventListener('click',()=>{nextS();start();});
+    root.addEventListener('mouseenter',stop);root.addEventListener('mouseleave',start);
+    let x0=null;
+    root.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;},{passive:true});
+    root.addEventListener('touchend',e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){dx>0?prevS():nextS();start();}x0=null;});
+    go(0);start();
+  })();
+
+  // =====================================================================
+  // Modal Doação — Triple Gateway
+  // =====================================================================
+  (function(){
+
+    const BUYPIX_URL         = 'https://api-buypix-production-70a0.up.railway.app';
+    const ABACASH_URL        = 'https://abacash-production.up.railway.app';
+    const ABACASH_PRODUCT_ID = 'SEU_PRODUCT_ID_ABACASH';
+    const ORION_URL          = 'https://orionphp-production.up.railway.app';
+    const PIXGO_URL          = 'https://pixgo-production.up.railway.app';
+
+    let timerInterval;
+    const donationModal=document.getElementById('donationModal');
+    if(!donationModal)return;
+    const closeModalBtn=document.getElementById('closeModal'),
+          modalPicker=document.getElementById('modalDonationPicker'),
+          generateBtn=document.getElementById('generatePixBtn'),
+          donorName=document.getElementById('donorName'),
+          donorEmail=document.getElementById('donorEmail'),
+          cpfContainer=document.getElementById('cpfContainer'),
+          donorCpf=document.getElementById('donorCpf'),
+          anonymousCheckbox=document.getElementById('anonymousCheckbox'),
+          pixResultArea=document.getElementById('pixResultArea'),
+          qrCodeImage=document.getElementById('qrCodeImage'),
+          pixCodeText=document.getElementById('pixCodeText'),
+          copyPixButton=document.getElementById('copyPixButton'),
+          donorMessage=document.getElementById('donorMessage');
+
+    modalPicker.addEventListener('change',function(){
+      const val=parseFloat(this.value);
+      if(val>=500){
+        cpfContainer.style.display='block';
+        if(anonymousCheckbox && anonymousCheckbox.checked){
+          donorName.style.display='';
+          donorName.previousElementSibling.style.display='';
+        }
+      } else {
+        cpfContainer.style.display='none';
+        donorCpf.value='';
+      }
+    });
+
+    function resetModalFields(){
+      donorName.value='';donorEmail.value='';donorCpf.value='';
+      cpfContainer.style.display='none';
+      if(anonymousCheckbox)anonymousCheckbox.checked=false;
+      if(donorMessage){donorMessage.value='';updateMessageField();}
+      pixResultArea.style.display='none';
+      generateBtn.disabled=false;
+      generateBtn.textContent='Gerar Código PIX';
+      generateBtn.style.opacity='1';
+      copyPixButton.textContent='COPIAR CÓDIGO PIX';
+      copyPixButton.style.backgroundColor='#24ca68';
+      copyPixButton.style.color='white';
+      clearInterval(timerInterval);
+      document.getElementById('pixTimer').style.display='none';
+      donorName.style.display='';
+      donorName.previousElementSibling.style.display='';
+    }
+
+    if(anonymousCheckbox){
+      const nomeLabel = donorName.previousElementSibling;
+      anonymousCheckbox.addEventListener('change',function(){
+        const val = parseFloat(modalPicker.value)||0;
+        if(this.checked && val < 500){
+          donorName.value='';
+          donorName.style.display='none';
+          if(nomeLabel) nomeLabel.style.display='none';
+        } else {
+          donorName.style.display='';
+          if(nomeLabel) nomeLabel.style.display='';
+        }
+      });
+    }
+
+    function startTimer(duration,display){
+      var timer=duration,minutes,seconds;
+      clearInterval(timerInterval);
+      document.getElementById('pixTimer').style.display='block';
+      timerInterval=setInterval(function(){
+        minutes=parseInt(timer/60,10);seconds=parseInt(timer%60,10);
+        minutes=minutes<10?"0"+minutes:minutes;seconds=seconds<10?"0"+seconds:seconds;
+        display.textContent=minutes+":"+seconds;
+        if(--timer<0){clearInterval(timerInterval);display.textContent="Expirado";}
+      },1000);
+    }
+
+    function updateMessageField(){
+      if(donorMessage&&donorMessage.value.trim()!==''){
+        donorMessage.style.borderColor='#24ca68';donorMessage.style.backgroundColor='#e8f8f0';
+      }else if(donorMessage){
+        donorMessage.style.borderColor='#ddd';donorMessage.style.backgroundColor='#fff';
+      }
+    }
+    if(donorMessage){
+      donorMessage.addEventListener('input',updateMessageField);
+      donorMessage.addEventListener('focus',updateMessageField);
+      donorMessage.addEventListener('blur',updateMessageField);
+      updateMessageField();
+    }
+
+    let isProcessing=false;
+
+    function openModal(){
+      history.pushState({modalOpen:true},'','#doar');
+      donationModal.style.display='flex';
+      document.body.style.overflow='hidden';
+      if(typeof pintrk==='function') pintrk('track','addtocart');
+    }
+    function closeModal(){
+      donationModal.style.display='none';
+      document.body.style.overflow='auto';
+      resetModalFields();
+      if(location.hash==='#doar')history.back();
+    }
+
+    window.addEventListener('openDonationModal',function(){openModal();});
+    document.querySelectorAll('.donation-button').forEach(button=>{
+      button.addEventListener('click',function(){resetModalFields();openModal();});
+    });
+    if(closeModalBtn)closeModalBtn.addEventListener('click',closeModal);
+    donationModal.addEventListener('click',function(e){if(e.target===donationModal)closeModal();});
+    window.addEventListener('popstate',function(){
+      if(donationModal.style.display==='flex'){donationModal.style.display='none';document.body.style.overflow='auto';}
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&donationModal.style.display==='flex')closeModal();
+    });
+
+    async function gerarPixBuypix(data){
+      const res=await fetch(`${BUYPIX_URL}/api/create-deposit`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+      const result=await res.json();
+      if(!result.success)throw new Error(result.message||'Erro no gateway BuyPix.');
+      return {qr_base64:result.data.pix_qr_code_base64||'',pix_code:result.data.pix_code||result.data.pix_qr_code||''};
+    }
+
+    async function gerarPixAbacash(data){
+      const payload={product_id:ABACASH_PRODUCT_ID,amount:data.amount,customer:{name:data.customer_name,email:data.customer_email,...(data.customer_cpf?{cpf:data.customer_cpf}:{})}};
+      const res=await fetch(`${ABACASH_URL}/api/create-payment`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const result=await res.json();
+      if(!result.success)throw new Error(result.message||'Erro no gateway Abacash.');
+      return {qr_base64:result.data.qr_code||'',pix_code:result.data.redirect_url||result.data.payment_id||''};
+    }
+
+    async function gerarPixOrion(data){
+      const payload={amount:data.amount,name:data.customer_name,email:data.customer_email};
+      const res=await fetch(`${ORION_URL}/api/create-payment`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const result=await res.json();
+      if(!result.success)throw new Error(result.message||'Erro no gateway OrionPay.');
+      return {qr_base64:result.data.qr_code||'',pix_code:result.data.pix_code||''};
+    }
+
+    async function gerarPixPixgo(data){
+      const payload={amount:data.amount,customer_name:data.customer_name,customer_email:data.customer_email,...(data.customer_cpf?{customer_cpf:data.customer_cpf}:{})};
+      const res=await fetch(`${PIXGO_URL}/api/create-payment`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const result=await res.json();
+      if(!result.success)throw new Error(result.message||'Erro no gateway PixGo.');
+      return {qr_base64:'',qr_image_url:result.data.qr_image_url||'',pix_code:result.data.qr_code||''};
+    }
+
+    function selecionarGateway(valor){
+      const faixaBuypix=300;
+      const faixaOrion=800;
+      if(valor<=faixaBuypix)return 'buypix';
+      if(valor>=faixaOrion)return 'orion';
+      return 'abacash';
+    }
+
+    generateBtn.addEventListener('click',async function(){
+      if(!modalPicker.value){alert('Por favor, selecione um valor para doação.');return;}
+      const amountVal=parseFloat(modalPicker.value);
+      if(amountVal>=500&&!donorName.value.trim()){alert('Para doações acima de R$ 500, o nome é obrigatório.');donorName.focus();return;}
+      if(!donorEmail.value.trim()||!isValidEmail(donorEmail.value)){alert('Por favor, informe um e-mail válido.');donorEmail.focus();return;}
+      if(amountVal>=500&&!donorCpf.value.trim()){alert('Para doações acima de R$ 500, o CPF/CNPJ é obrigatório.');donorCpf.focus();return;}
+      if(isProcessing)return;
+
+      isProcessing=true;
+      const originalText=generateBtn.textContent;
+      generateBtn.textContent='Gerando pix, aguarde...';
+      generateBtn.style.opacity='0.7';
+      generateBtn.disabled=true;
+
+      const donationData={amount:amountVal,customer_name:donorName.value.trim(),customer_email:donorEmail.value.trim(),customer_cpf:donorCpf.value.trim()?donorCpf.value.replace(/\D/g,''):null};
+
+      try{
+        const gateway=selecionarGateway(amountVal);
+        const pix=gateway==='buypix'?await gerarPixBuypix(donationData):gateway==='orion'?await gerarPixOrion(donationData):gateway==='pixgo'?await gerarPixPixgo(donationData):await gerarPixAbacash(donationData);
+
+        if(pix.qr_image_url){qrCodeImage.src=pix.qr_image_url;qrCodeImage.style.display='block';}
+        else if(pix.qr_base64){qrCodeImage.src=pix.qr_base64.startsWith('data:')?pix.qr_base64:'data:image/png;base64,'+pix.qr_base64;qrCodeImage.style.display='block';}
+        else{qrCodeImage.style.display='none';}
+
+        pixCodeText.textContent=pix.pix_code;
+        pixResultArea.style.display='block';
+        pixResultArea.scrollIntoView({behavior:'smooth',block:'nearest'});
+        startTimer(30*60,document.querySelector('#timeCount'));
+
+        if(typeof pintrk==='function'){pintrk('track','checkout',{event_id:'donation_'+Date.now(),value:amountVal,order_quantity:1,currency:'BRL'});}
+        generateBtn.textContent='Código PIX gerado com sucesso';
+
+      }catch(error){
+        console.error('Erro ao gerar PIX:',error);
+        alert('Não foi possível gerar o código PIX.\n'+error.message+'\n\nPor favor, tente novamente.');
+        generateBtn.textContent=originalText;
+        generateBtn.style.opacity='1';
+        generateBtn.disabled=false;
+      }finally{
+        isProcessing=false;
+      }
+    });
+
+    function fallbackCopy(text){
+      var t=document.createElement("textarea");t.value=text;t.style.cssText="position:fixed;top:0;left:0;opacity:0";
+      document.body.appendChild(t);t.focus();t.select();
+      try{var ok=document.execCommand('copy');document.body.removeChild(t);return ok;}
+      catch(e){document.body.removeChild(t);return false;}
+    }
+
+    copyPixButton.addEventListener('click',async function(){
+      const raw=pixCodeText.textContent;if(!raw)return;
+      const txt=raw.trim();let ok=false;
+      if(navigator.clipboard&&navigator.clipboard.writeText){try{await navigator.clipboard.writeText(txt);ok=true;}catch(err){ok=fallbackCopy(txt);}}
+      else{ok=fallbackCopy(txt);}
+      if(ok){
+        this.textContent='COPIADO!';this.style.backgroundColor='#0d47a1';this.style.transform='scale(1.02)';
+        setTimeout(()=>{this.textContent='COPIAR CÓDIGO PIX';this.style.backgroundColor='#24ca68';this.style.transform='scale(1)';},3000);
+      }else{alert('Seu dispositivo bloqueou a cópia automática. Por favor, selecione o código manualmente e copie.');}
+    });
+
+    function isValidEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
+  })();
+
+  // mainDonationPicker
+  (function(){
+    const mainPicker=document.getElementById('mainDonationPicker');
+    if(!mainPicker)return;
+    mainPicker.addEventListener('change',function(){
+      if(this.value){
+        const modalPicker=document.getElementById('modalDonationPicker');
+        if(modalPicker){modalPicker.value=this.value;modalPicker.dispatchEvent(new Event('change'));}
+        window.dispatchEvent(new CustomEvent('openDonationModal'));
+        this.value="";
+      }
+    });
+  })();
+</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWDJKMGH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+</body>
+</html>
