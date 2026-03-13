@@ -492,7 +492,14 @@ pintrk('page');
               </div>
             </div>
           </section>
-
+<!-- Doadores Recentes -->
+<section id="doadores" class="card content-defer" style="padding:1.25rem 1.5rem">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap">
+    <h2 style="font-size:1.25rem;color:var(--azul);font-weight:700">Doadores Recentes</h2>
+    <span style="font-size:.85rem;color:#64748b">Atualizando em tempo real</span>
+  </div>
+  <ul id="listaDoadores" style="list-style:none;padding:0;margin:0;"></ul>
+</section>
           <!-- Comentários -->
           <section id="comentarios" class="card content-defer" style="padding:1.25rem 1.5rem">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap">
@@ -1089,6 +1096,17 @@ pintrk('page');
 
         if(typeof pintrk==='function'){pintrk('track','checkout',{event_id:'donation_'+Date.now(),value:amountVal,order_quantity:1,currency:'BRL'});}
         generateBtn.textContent='Código PIX gerado com sucesso';
+        arrecadado += amountVal;
+        atualizarProgresso(true);
+        exibirNotificacao(
+          anonymousCheckbox && anonymousCheckbox.checked ? 'Doador Anônimo' : donorName.value.trim(),
+          'https://placehold.co/96x96?text=' + (anonymousCheckbox && anonymousCheckbox.checked ? 'A' : encodeURIComponent(donorName.value.trim().charAt(0))),
+          amountVal
+        );
+        window.adicionarDoadorReal(
+          anonymousCheckbox && anonymousCheckbox.checked ? 'Doador Anônimo' : donorName.value.trim(),
+          amountVal
+        );
 
       }catch(error){
         console.error('Erro ao gerar PIX:',error);
@@ -1134,6 +1152,57 @@ pintrk('page');
         this.value="";
       }
     });
+  })();
+
+// Doadores Recentes
+  (function(){
+    const lista = document.getElementById('listaDoadores');
+    if(!lista) return;
+
+    const fmtD = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+
+    const doadoresIniciais = [
+      {nome:'Ana Souza',      valor:50,  tempo:'há 3 minutos'},
+      {nome:'Carlos Lima',    valor:100, tempo:'há 7 minutos'},
+      {nome:'Mariana Neves',  valor:30,  tempo:'há 12 minutos'},
+      {nome:'Pedro Almeida',  valor:200, tempo:'há 18 minutos'},
+      {nome:'Juliana Costa',  valor:50,  tempo:'há 25 minutos'},
+      {nome:'Rafael Souza',   valor:150, tempo:'há 31 minutos'},
+      {nome:'Beatriz Mendes', valor:20,  tempo:'há 40 minutos'},
+    ];
+
+    const CORES = ['#0d3a6f','#2e7d32','#7c3aed','#b45309','#0891b2','#be185d','#047857'];
+
+    function criarItem(nome, valor, tempo, destaque){
+      const iniciais = nome === 'Doador Anônimo' ? '?' : nome.split(' ').map(p=>p[0]).slice(0,2).join('');
+      const cor = CORES[Math.floor(Math.random()*CORES.length)];
+      const li = document.createElement('li');
+      li.style.cssText='padding:.75rem 0;border-bottom:1px solid #e5e7eb;display:flex;gap:1rem;align-items:center;';
+      if(destaque) li.style.background='#f0fdf4';
+      li.innerHTML=`
+        <div style="width:40px;height:40px;border-radius:50%;background:${cor};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#fff;flex:0 0 40px;">${iniciais}</div>
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.25rem;">
+            <span style="font-weight:600;color:var(--azul);font-size:.9rem;">${nome}</span>
+            <span style="font-weight:700;color:var(--verde);font-size:.9rem;">${fmtD.format(valor)}</span>
+          </div>
+          <span style="font-size:.75rem;color:#94a3b8;">${tempo}</span>
+        </div>`;
+      return li;
+    }
+
+    // Popula lista inicial
+    doadoresIniciais.forEach(d => lista.appendChild(criarItem(d.nome, d.valor, d.tempo, false)));
+
+    // Função global para adicionar doador real no topo
+    window.adicionarDoadorReal = function(nome, valor){
+      const item = criarItem(nome, valor, 'agora mesmo', true);
+      lista.insertBefore(item, lista.firstChild);
+      // Remove o último se passar de 8
+      if(lista.children.length > 8) lista.removeChild(lista.lastChild);
+      // Remove destaque após 10s
+      setTimeout(()=>{ item.style.background=''; }, 10000);
+    };
   })();
 </script>
 
