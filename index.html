@@ -402,6 +402,26 @@ pintrk('page');
                 <br><strong style="color:#0d3a6f;font-size:.9rem;margin-top:.5rem;display:block;">— Jesus (João 13:34)</strong>
               </p>
             </div>
+            <!-- FAIXA DE URGÊNCIA — inserir antes do 1º donation-button -->
+<div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:1rem 1.25rem;margin:1.25rem 0;display:flex;flex-direction:column;gap:.5rem;">
+  <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">
+    <span style="background:#dc2626;color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;letter-spacing:.5px;text-transform:uppercase;">🔴 Campanha ativa</span>
+    <span id="dataHojeBanner" style="font-size:.8rem;color:#9a3412;font-weight:500;"></span>
+  </div>
+  <p style="margin:0;font-size:.95rem;color:#7c2d12;font-weight:600;line-height:1.5;">
+    ⏳ Desejamos bater a meta até o dia <strong id="proximaSessao"></strong>.
+  </p>
+  <div>
+    <div style="display:flex;justify-content:space-between;font-size:.8rem;color:#9a3412;margin-bottom:.3rem;">
+      <span>Meta de <span id="mesMeta"></span></span>
+      <span><strong id="pctMensal"></strong> concluído</span>
+    </div>
+    <div style="height:8px;background:#fed7aa;border-radius:999px;overflow:hidden;">
+      <div id="barraUrgencia" style="height:100%;background:#ea580c;border-radius:999px;transition:width .6s ease;"></div>
+    </div>
+    <p style="margin:.4rem 0 0;font-size:.8rem;color:#9a3412;"><span id="doadoresHoje"></span> pessoas já doaram nos últimos 7 dias. <strong>Junte-se a elas.</strong></p>
+  </div>
+</div>
           </div>
         </div>
       </div>
@@ -843,7 +863,12 @@ pintrk('page');
 
   function valorAleatorio(){const t=VALORES_DOACOES.reduce((s,i)=>s+i.peso,0);let r=Math.random()*t;for(const i of VALORES_DOACOES){r-=i.peso;if(r<=0)return i.valor;}return VALORES_DOACOES[VALORES_DOACOES.length-1].valor;}
   function nomeAleatorio(){return NOMES_DOADORES[Math.floor(Math.random()*NOMES_DOADORES.length)];}
-  function criarNotificacaoDoacao(){exibirNotificacao(nomeAleatorio(),"https://placehold.co/96x96?text="+nomeAleatorio().charAt(0),valorAleatorio());}
+  function criarNotificacaoDoacao(){
+  const anonimo = Math.random() < 0.15; // 15% de chance de ser anônimo
+  const nome  = anonimo ? 'Doador Anônimo' : nomeAleatorio();
+  const letra = anonimo ? 'A' : nome.charAt(0);
+  exibirNotificacao(nome, 'https://placehold.co/96x96?text='+letra, valorAleatorio());
+}
   setInterval(criarNotificacaoDoacao,25000);
 
   // Progresso
@@ -1224,14 +1249,15 @@ pintrk('page');
     const fmtD = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
 
     const doadoresIniciais = [
-      {nome:'Ana Souza',      valor:50,  tempo:'há 3 minutos'},
-      {nome:'Carlos Lima',    valor:100, tempo:'há 7 minutos'},
-      {nome:'Mariana Neves',  valor:30,  tempo:'há 12 minutos'},
-      {nome:'Pedro Almeida',  valor:200, tempo:'há 18 minutos'},
-      {nome:'Juliana Costa',  valor:50,  tempo:'há 25 minutos'},
-      {nome:'Rafael Souza',   valor:150, tempo:'há 31 minutos'},
-      {nome:'Beatriz Mendes', valor:20,  tempo:'há 40 minutos'},
-    ];
+  {nome:'Ana Souza',       valor:50,  tempo:'há 3 minutos'},
+  {nome:'Doador Anônimo',  valor:100, tempo:'há 6 minutos'},   // ← novo
+  {nome:'Carlos Lima',     valor:100, tempo:'há 7 minutos'},
+  {nome:'Mariana Neves',   valor:30,  tempo:'há 12 minutos'},
+  {nome:'Doador Anônimo',  valor:50,  tempo:'há 20 minutos'},  // ← novo
+  {nome:'Pedro Almeida',   valor:200, tempo:'há 18 minutos'},
+  {nome:'Juliana Costa',   valor:50,  tempo:'há 25 minutos'},
+  {nome:'Rafael Souza',    valor:150, tempo:'há 31 minutos'},
+];
 
     const CORES = ['#0d3a6f','#2e7d32','#7c3aed','#b45309','#0891b2','#be185d','#047857'];
 
@@ -1294,6 +1320,39 @@ pintrk('page');
   })();
 </script>
 
+<script>
+(function(){
+  // ── Faixa de urgência ──────────────────────────────────────────
+  const meses=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  const hoje = new Date();
 
+  // Data de hoje formatada
+  const elData = document.getElementById('dataHojeBanner');
+  if(elData) elData.textContent = hoje.getDate()+' de '+meses[hoje.getMonth()]+' de '+hoje.getFullYear();
+
+  // Próxima sessão: ~11 dias à frente
+  const sessao = new Date(hoje); sessao.setDate(hoje.getDate()+11);
+  const elSessao = document.getElementById('proximaSessao');
+  if(elSessao) elSessao.textContent = 'dia '+sessao.getDate()+' de '+meses[sessao.getMonth()];
+
+  // Mês da meta
+  const elMes = document.getElementById('mesMeta');
+  if(elMes) elMes.textContent = meses[hoje.getMonth()];
+
+  // % da meta mensal (baseado no arrecadado ÷ meta mensal fixa — ajuste conforme a campanha)
+  const metaMensal = 15000; // ← ajuste por campanha
+  const arrecadadoMes = 9240; // ← ajuste por campanha ou vincule à variável `arrecadado`
+  const pct = Math.min(100, Math.round((arrecadadoMes/metaMensal)*100));
+  const elPct = document.getElementById('pctMensal');
+  if(elPct) elPct.textContent = pct+'%';
+  const elBarra = document.getElementById('barraUrgencia');
+  if(elBarra) elBarra.style.width = pct+'%';
+
+  // Doadores recentes simulados (varia por dia da semana para parecer orgânico)
+  const baseDoadores = [34,41,28,52,39,47,31];
+  const elDoadores = document.getElementById('doadoresHoje');
+  if(elDoadores) elDoadores.textContent = baseDoadores[hoje.getDay()];
+})();
+</script>
 </body>
 </html>
