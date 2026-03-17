@@ -1,11 +1,12 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="theme-color" content="#0d3a6f">
   <title>Ajude Allan e Guilherme — Um irmão que cuida do outro com tudo que tem | Ong Crescendo com Amor</title>
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -187,18 +188,23 @@
     h3{font-size:1.05rem !important;}
     .btn{padding:1rem 1.5rem !important;font-size:1rem;min-height:48px;}
     .progress{height:16px;}
+
     #heroSlider{aspect-ratio:4/5;min-height:400px;}
     #heroSlider .slide img,#heroSlider .slide video{max-height:80vh;}
+
     #custos{overflow:visible !important;}
     #custos .card{overflow:visible !important;}
     #custos table{min-width:100%;font-size:0.8rem;display:table;}
     #custos th,#custos td{padding:0.75rem 0.5rem;white-space:normal;word-break:break-word;}
+
     #listaComentarios li{flex-direction:column;gap:0.75rem;padding:1rem 0;border-bottom:1px solid #e5e7eb;}
     #listaComentarios li:last-child{border-bottom:none;}
     .avatar-initials{width:40px;height:40px;font-size:.85rem;flex:0 0 40px;}
+
     footer .footer-main{padding:1.5rem 1rem;}
     .selos{gap:.5rem;}
     .selo{font-size:.7rem;padding:.35rem .6rem;}
+
     #gestaoModal{padding:0;align-items:flex-start;padding-top:env(safe-area-inset-top);}
     #gestaoModal .box{width:100vw;min-height:100vh;max-height:100vh;border-radius:0;margin:0;}
     #gestaoModal header{padding:1rem 1.25rem;position:sticky;top:0;background:white;z-index:1;box-shadow:0 2px 4px rgba(0,0,0,0.1);min-height:60px;}
@@ -206,11 +212,12 @@
     #gestaoModal .content{padding:1.25rem;padding-bottom:calc(1.25rem + env(safe-area-inset-bottom));overflow-y:auto;-webkit-overflow-scrolling:touch;}
     #gestaoModal table{font-size:0.85rem;}
     #gestaoModal th,#gestaoModal td{padding:0.5rem 0.25rem;}
+
     .historia-destaque{margin:1rem 0;padding:.85rem 1rem;}
     .contato-grid{gap:1rem;}
   }
 
-  /* ── Custom Video Player ── */
+/* ── Custom Video Player ── */
   .cvp-wrap{position:relative;width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;}
   .cvp-wrap video{width:100%;height:100%;object-fit:contain;display:block;}
   .cvp-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
@@ -238,7 +245,6 @@
   @media(max-width:400px){.cvp-vol-wrap{display:none;}}
 </style>
 
-<!-- Pinterest Tag -->
 <script>
 !function(e){if(!window.pintrk){window.pintrk = function () {
 window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
@@ -253,8 +259,6 @@ pintrk('page');
 <img height="1" width="1" style="display:none;" alt=""
   src="https://ct.pinterest.com/v3/?event=init&tid=2612491275400&pd[em]=<hashed_email_address>&noscript=1" />
 </noscript>
-<!-- end Pinterest Tag -->
-
 </head>
 <body>
   <header class="glass">
@@ -290,11 +294,9 @@ pintrk('page');
 
   <main id="topo">
 
-    <!-- CAMPANHA -->
     <section id="campanha" class="container" style="padding-bottom:2rem">
       <div class="grid lg-2">
 
-        <!-- Slider -->
         <div class="card" style="overflow:hidden">
           <div id="heroSlider" role="region" aria-label="Galeria de imagens">
             <div class="slide active" aria-hidden="false">
@@ -347,7 +349,6 @@ pintrk('page');
           </div>
         </div>
 
-        <!-- Sumário + Doação -->
         <div class="grid" style="gap:1rem">
           <div class="card" style="padding:1.25rem 1.5rem">
             <h1 style="font-size:1.5rem;color:var(--azul);font-weight:800;line-height:1.3">
@@ -355,25 +356,23 @@ pintrk('page');
             </h1>
             <p style="color:#475569;margin-top:.5rem">Cada doação garante comida, remédio e um futuro possível para esses dois irmãos.</p>
 
-            <!-- BARRA DE PROGRESSO -->
             <div style="margin-top:1rem">
-              <div style="display:flex;justify-content:space-between;gap:.75rem;align-items:flex-end">
-                <div>
-                  <p style="font-size:.85rem;color:#64748b;margin:0">Arrecadado</p>
-                  <p id="arrecadadoAtual" style="font-size:1.2rem;font-weight:700;color:var(--verde)">R$ 8.450,00</p>
-                </div>
-                <div style="text-align:right">
-                  <p style="font-size:.85rem;color:#64748b;margin:0">Meta</p>
-                  <p id="metaValor" style="font-size:1.2rem;font-weight:700;color:var(--azul)">R$ 30.000,00</p>
-                </div>
-              </div>
-              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso da arrecadação" style="margin-top:.5rem">
-                <div id="barra" class="bar"></div>
-              </div>
-              <div style="margin-top:.25rem;font-size:.85rem;color:#64748b">Progresso: <span id="percentual">0%</span></div>
-            </div>
+  <div style="display:flex;justify-content:space-between;gap:.75rem;align-items:flex-end">
+    <div>
+      <p style="font-size:.85rem;color:#64748b;margin:0">Arrecadado dessa semana</p>
+      <p id="arrecadadoAtual" style="font-size:1.2rem;font-weight:700;color:var(--verde)">R$ 8.450,00</p>
+    </div>
+    <div style="text-align:right">
+      <p style="font-size:.85rem;color:#64748b;margin:0">Meta da semana</p>
+      <p id="metaValor" style="font-size:1.2rem;font-weight:700;color:var(--azul)">R$ 2.450,00</p>
+    </div>
+  </div>
+  <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso da arrecadação" style="margin-top:.5rem">
+    <div id="barra" class="bar"></div>
+  </div>
+  <div style="margin-top:.25rem;font-size:.85rem;color:#64748b">Progresso da meta: <span id="percentual">0%</span></div>
+</div>
 
-            <!-- PICKER -->
             <div style="max-width:500px;margin:20px auto;padding:15px;background:#f8f9fa;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
               <select id="mainDonationPicker" style="width:100%;padding:18px;border-radius:12px;border:2px solid #24ca68;font-size:17px;background:#ffffff;color:#555;-webkit-appearance:none;-moz-appearance:none;appearance:none;margin:10px 0;font-weight:400;box-shadow:0 2px 8px rgba(36,202,104,0.2);background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22><path fill=%22%2324ca68%22 d=%22M7 10l5 5 5-5z%22/></svg>');background-repeat:no-repeat;background-position:right 12px center;background-size:20px;font-family:'Inter','Segoe UI',Roboto,sans-serif;cursor:pointer;">
                 <option value="" disabled selected style="color:#999;font-style:italic;">Selecione o valor para doar</option>
@@ -395,17 +394,15 @@ pintrk('page');
               </p>
             </div>
 
-            <!-- VERSÍCULO -->
             <div style="background:linear-gradient(135deg,#fff7ed 0%,#ffedd5 100%);border-left:4px solid #ea580c;padding:1.25rem;margin:1.5rem 0;border-radius:0 12px 12px 0;box-shadow:0 2px 8px rgba(234,88,12,0.1);">
               <p style="margin:0;font-style:italic;color:#9a3412;font-size:1rem;line-height:1.5;text-align:center;">
                 "Amai-vos uns aos outros, como eu vos amei."
                 <br><strong style="color:#0d3a6f;font-size:.9rem;margin-top:.5rem;display:block;">— Jesus (João 13:34)</strong>
               </p>
             </div>
-            <!-- FAIXA DE URGÊNCIA — inserir antes do 1º donation-button -->
-<div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:1rem 1.25rem;margin:1.25rem 0;display:flex;flex-direction:column;gap:.5rem;">
+            <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:1rem 1.25rem;margin:1.25rem 0;display:flex;flex-direction:column;gap:.5rem;">
   <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">
-    <span style="background:#dc2626;color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;letter-spacing:.5px;text-transform:uppercase;">🔴 Campanha ativa</span>
+    <span style="background:#10b981;color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;letter-spacing:.5px;text-transform:uppercase;">🔴 Campanha ativa</span>
     <span id="dataHojeBanner" style="font-size:.8rem;color:#9a3412;font-weight:500;"></span>
   </div>
   <p style="margin:0;font-size:.95rem;color:#7c2d12;font-weight:600;line-height:1.5;">
@@ -427,8 +424,7 @@ pintrk('page');
       </div>
     </section>
 
-   <!-- HISTÓRIA -->
-<div class="container">
+   <div class="container">
   <article id="historia" class="card content-defer" style="padding:1.25rem 1.5rem">
 
     <span class="historia-tag">Situação urgente</span>
@@ -503,12 +499,10 @@ pintrk('page');
   </article>
 </div>
 
-    <!-- CUSTOS + COMENTÁRIOS + ASIDE -->
     <section class="container" style="padding-bottom:2rem">
       <div class="grid lg-aside">
         <div class="grid" style="gap:1rem;min-width:0">
 
-          <!-- Custos -->
           <section id="custos" class="card content-defer" style="padding:1rem">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.5rem;flex-wrap:wrap">
               <h2 style="font-size:1.1rem;color:var(--azul);font-weight:700;margin:0">Necessidades da Família</h2>
@@ -574,7 +568,6 @@ pintrk('page');
               </div>
             </div>
           </section>
-<!-- Doadores Recentes -->
 <section id="doadores" class="card content-defer" style="padding:1.25rem 1.5rem">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap">
     <h2 style="font-size:1.25rem;color:var(--azul);font-weight:700">Doadores Recentes</h2>
@@ -582,7 +575,6 @@ pintrk('page');
   </div>
   <ul id="listaDoadores" style="list-style:none;padding:0;margin:0;"></ul>
 </section>
-          <!-- Comentários -->
           <section id="comentarios" class="card content-defer" style="padding:1.25rem 1.5rem">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap">
               <h2 style="font-size:1.25rem;color:var(--azul);font-weight:700">Mensagens de Apoio</h2>
@@ -640,7 +632,6 @@ pintrk('page');
             </ul>
           </section>
 
-          <!-- Aside: Transparência + Compartilhar -->
           <aside class="grid" style="gap:1.5rem;min-width:0">
             <div id="transparencia" class="card" style="padding:1.25rem 1.5rem">
               <h3 style="font-size:1.1rem;color:var(--azul);font-weight:700">Prestação de Contas</h3>
@@ -658,7 +649,6 @@ pintrk('page');
       </div>
     </section>
 
-    <!-- SEÇÃO DE CONTATO -->
     <section id="contato" style="padding:2.5rem 0;">
       <div class="container">
         <div style="max-width:700px;margin:0 auto;padding:0 1rem;">
@@ -669,7 +659,7 @@ pintrk('page');
               <input type="text" placeholder="Seu nome completo" aria-label="Nome">
               <input type="email" placeholder="Seu e-mail" aria-label="E-mail">
               <textarea placeholder="Sua mensagem..." aria-label="Mensagem"></textarea>
-              <button class="btn btn-blue" style="width:100%;padding:.9rem;font-size:1rem;" onclick="showToast('Mensagem enviada! Em breve retornaremos.')">Enviar mensagem</button>
+              <button class="btn btn-blue" style="width:100%;padding:.9rem;font-size:1rem;" onclick="if(typeof pintrk==='function') pintrk('track', 'lead', {lead_type: 'Contato'}); showToast('Mensagem enviada! Em breve retornaremos.')">Enviar mensagem</button>
             </div>
           </div>
         </div>
@@ -678,7 +668,6 @@ pintrk('page');
 
   </main>
 
-  <!-- Modal de Gestão -->
   <div id="gestaoModal" role="dialog" aria-modal="true" aria-labelledby="gestaoTitle" aria-describedby="gestaoDesc">
     <div class="backdrop"></div>
     <div class="box">
@@ -701,12 +690,10 @@ pintrk('page');
     </div>
   </div>
 
-  <!-- Toast -->
   <div id="toast" class="hidden">
     <div class="btn-blue" style="padding:.75rem 1rem;border-radius:12px">Ação realizada!</div>
   </div>
 
-  <!-- FOOTER COMPLETO -->
   <footer>
     <div class="footer-main">
       <div class="footer-col">
@@ -746,7 +733,6 @@ pintrk('page');
     </div>
   </footer>
 
-  <!-- MODAL DE DOAÇÃO -->
   <div id="donationModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:1000;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;">
     <div style="background:white;border-radius:20px;max-width:400px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 10px 40px rgba(0,0,0,0.2);">
       <div style="padding:25px 25px 15px 25px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;">
@@ -838,7 +824,7 @@ pintrk('page');
   });
 
   const fmt=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
-  let meta=30000, arrecadado=8450;
+  let meta=2450, arrecadado=8450; // Atualizado com valores de exemplo, meta semanal e arrecadado
 
   function exibirNotificacao(nome,image,valor){
     const n=document.createElement("div");
@@ -913,7 +899,9 @@ pintrk('page');
     }
 
     function handleBackButton(e){if(modalIsOpen){e.preventDefault();closeModal();if(history.state&&history.state.modalOpen)history.back();}}
-    function openModal(){fill(rsGestaoDados);modal.style.display='flex';setTimeout(()=>modal.classList.add('active'),10);document.body.style.overflow='hidden';history.pushState({modalOpen:true},'');modalIsOpen=true;window.addEventListener('popstate',handleBackButton);}
+    function openModal(){
+      if(typeof pintrk === 'function') pintrk('track', 'viewcategory', { event_id: 'view_transparencia' });
+      fill(rsGestaoDados);modal.style.display='flex';setTimeout(()=>modal.classList.add('active'),10);document.body.style.overflow='hidden';history.pushState({modalOpen:true},'');modalIsOpen=true;window.addEventListener('popstate',handleBackButton);}
     function closeModal(){modal.classList.remove('active');setTimeout(()=>modal.style.display='none',300);document.body.style.overflow='';modalIsOpen=false;window.removeEventListener('popstate',handleBackButton);}
 
     if(btnClose)btnClose.addEventListener('click',closeModal);
@@ -988,6 +976,45 @@ pintrk('page');
   // Modal Doação — Triple Gateway
   // =====================================================================
   (function(){
+    
+    // ── GERADOR PIX DIRETO PARA CHAVE ALEATÓRIA ───────────────────────
+    function getCrc16(payload) {
+      let poly = 0x1021;
+      let crc = 0xFFFF;
+      for (let i = 0; i < payload.length; i++) {
+        crc ^= (payload.charCodeAt(i) << 8);
+        for (let j = 0; j < 8; j++) {
+          if ((crc & 0x8000) !== 0) crc = (crc << 1) ^ poly;
+          else crc <<= 1;
+        }
+      }
+      return (crc & 0xFFFF).toString(16).toUpperCase().padStart(4, '0');
+    }
+
+    function gerarPixEstatico(chave, valor) {
+      let nome = "ONG CRESCENDO COM AMOR".substring(0, 25);
+      let cidade = "RIO RUFINO".substring(0, 15);
+      let valorStr = valor.toFixed(2);
+
+      let pfi = "000201";
+      let accInfo = "26" + ("0014br.gov.bcb.pix0136" + chave).length.toString().padStart(2, '0') + "0014br.gov.bcb.pix0136" + chave;
+      let catCode = "52040000";
+      let currency = "5303986";
+      let amount = "54" + valorStr.length.toString().padStart(2, '0') + valorStr;
+      let country = "5802BR";
+      let mName = "59" + nome.length.toString().padStart(2, '0') + nome;
+      let mCity = "60" + cidade.length.toString().padStart(2, '0') + cidade;
+      let addData = "62070503***";
+
+      let payload = pfi + accInfo + catCode + currency + amount + country + mName + mCity + addData;
+      payload += "6304";
+      let crc = getCrc16(payload);
+
+      let pixCode = payload + crc;
+      let qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + encodeURIComponent(pixCode);
+
+      return { qr_image_url: qrUrl, pix_code: pixCode };
+    }
 
     const BUYPIX_URL         = 'https://api-buypix-production-70a0.up.railway.app';
     const ABACASH_URL        = 'https://abacash-production.up.railway.app';
@@ -1169,8 +1196,14 @@ pintrk('page');
       const donationData={amount:amountVal,customer_name:donorName.value.trim(),customer_email:donorEmail.value.trim(),customer_cpf:donorCpf.value.trim()?donorCpf.value.replace(/\D/g,''):null};
 
       try{
-        const gateway=selecionarGateway(amountVal);
-        const pix=gateway==='buypix'?await gerarPixBuypix(donationData):gateway==='orion'?await gerarPixOrion(donationData):gateway==='pixgo'?await gerarPixPixgo(donationData):await gerarPixAbacash(donationData);
+        let pix;
+        if (amountVal === 500 || amountVal === 800 || amountVal === 1000) {
+          // Usa a chave PIX direta para valores altos
+          pix = gerarPixEstatico('97713284-f756-4a44-b4a5-1c023a421b05', amountVal);
+        } else {
+          const gateway=selecionarGateway(amountVal);
+          pix=gateway==='buypix'?await gerarPixBuypix(donationData):gateway==='orion'?await gerarPixOrion(donationData):gateway==='pixgo'?await gerarPixPixgo(donationData):await gerarPixAbacash(donationData);
+        }
 
         if(pix.qr_image_url){qrCodeImage.src=pix.qr_image_url;qrCodeImage.style.display='block';}
         else if(pix.qr_base64){qrCodeImage.src=pix.qr_base64.startsWith('data:')?pix.qr_base64:'data:image/png;base64,'+pix.qr_base64;qrCodeImage.style.display='block';}
@@ -1233,6 +1266,7 @@ pintrk('page');
     if(!mainPicker)return;
     mainPicker.addEventListener('change',function(){
       if(this.value){
+        if(typeof pintrk === 'function') pintrk('track', 'search', { search_query: 'valor_' + this.value });
         const modalPicker=document.getElementById('modalDonationPicker');
         if(modalPicker){modalPicker.value=this.value;modalPicker.dispatchEvent(new Event('change'));}
         window.dispatchEvent(new CustomEvent('openDonationModal'));
@@ -1300,7 +1334,14 @@ pintrk('page');
     var wrap=document.getElementById('cvpWrap'),overlay=document.getElementById('cvpOverlay'),playBtn=document.getElementById('cvpPlayBtn'),iconPlay=document.getElementById('cvpIconPlay'),iconPause=document.getElementById('cvpIconPause'),progress=document.getElementById('cvpProgress'),fill=document.getElementById('cvpFill'),timeEl=document.getElementById('cvpTime'),muteBtn=document.getElementById('cvpMuteBtn'),volSlider=document.getElementById('cvpVolSlider'),volWave1=document.getElementById('cvpVolWave1'),volWave2=document.getElementById('cvpVolWave2'),fsBtn=document.getElementById('cvpFsBtn'),fsEnter=document.getElementById('cvpFsEnter'),fsExit=document.getElementById('cvpFsExit');
     function fmtT(s){s=Math.floor(s||0);var m=Math.floor(s/60),sec=s%60;return m+':'+(sec<10?'0':'')+sec;}
     function setPlaying(p){wrap.classList.toggle('playing',p);wrap.classList.toggle('paused',!p);if(iconPlay)iconPlay.style.display=p?'none':'block';if(iconPause)iconPause.style.display=p?'block':'none';}
-    function togglePlay(){if(vid.paused)vid.play();else vid.pause();}
+    function togglePlay(){
+      if(vid.paused) {
+        vid.play();
+        if(typeof pintrk === 'function') pintrk('track', 'watchvideo', { video_title: 'Campanha Allan' });
+      } else {
+        vid.pause();
+      }
+    }
     if(overlay)overlay.addEventListener('click',togglePlay);
     if(playBtn)playBtn.addEventListener('click',function(e){e.stopPropagation();togglePlay();});
     vid.addEventListener('play',function(){setPlaying(true);});
