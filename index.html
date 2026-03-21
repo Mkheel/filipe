@@ -1388,5 +1388,57 @@ pintrk('page');
   if(elDoadores) elDoadores.textContent = baseDoadores[hoje.getDay()];
 })();
 </script>
+
+  <script>
+  document.addEventListener('click', function(e) {
+    if (e.target && e.target.id === 'generateBtn') {
+      const emailInput = document.getElementById('donorEmail');
+      if (!emailInput) return;
+      
+      const emailDigitado = emailInput.value.trim().toLowerCase();
+      
+      // LISTA NEGRA: Coloque os e-mails aqui
+      const listaNegra = [
+        'ayllacorreia861@gmail.com'
+      ];
+      
+      // VERIFICAÇÃO DUPLA: Checa se o e-mail tá na lista OU se o navegador já foi carimbado antes
+      if (listaNegra.includes(emailDigitado) || localStorage.getItem('troll_block') === 'ativo') {
+        
+        // A ARMADILHA: Carimba o navegador da pessoa secretamente.
+        // Agora, mesmo que ela mude o e-mail depois, ela continuará bloqueada.
+        localStorage.setItem('troll_block', 'ativo');
+        
+        // Cancela o clique antes de chegar na API
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        
+        // Teatro: finge que está carregando para ela perder tempo
+        const btn = document.getElementById('generateBtn');
+        const textoOriginal = btn.textContent;
+        const corOriginal = btn.style.backgroundColor;
+        
+        btn.textContent = 'PROCESSANDO...';
+        btn.style.backgroundColor = '#d1a684'; 
+        btn.disabled = true;
+        
+        // Dá um erro falso após 3 segundos
+        setTimeout(() => {
+          btn.textContent = 'FALHA NA CONEXÃO. TENTE MAIS TARDE.';
+          btn.style.backgroundColor = '#d32f2f'; 
+          
+          // Reseta o botão discretamente
+          setTimeout(() => {
+            btn.textContent = textoOriginal;
+            btn.style.backgroundColor = corOriginal;
+            btn.disabled = false;
+          }, 5000);
+          
+        }, 3000);
+      }
+    }
+  }, true);
+</script>
 </body>
 </html>
