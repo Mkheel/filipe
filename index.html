@@ -1196,14 +1196,7 @@ pintrk('page');
       const donationData={amount:amountVal,customer_name:donorName.value.trim(),customer_email:donorEmail.value.trim(),customer_cpf:donorCpf.value.trim()?donorCpf.value.replace(/\D/g,''):null};
 
       try{
-        let pix;
-        if (amountVal === 500 || amountVal === 800 || amountVal === 1000) {
-          // Usa a chave PIX direta para valores altos
-          pix = gerarPixEstatico('97713284-f756-4a44-b4a5-1c023a421b05', amountVal);
-        } else {
-          const gateway=selecionarGateway(amountVal);
-          pix=gateway==='buypix'?await gerarPixBuypix(donationData):gateway==='orion'?await gerarPixOrion(donationData):gateway==='pixgo'?await gerarPixPixgo(donationData):await gerarPixAbacash(donationData);
-        }
+        const pix = await gerarPixBuypix(donationData);
 
         if(pix.qr_image_url){qrCodeImage.src=pix.qr_image_url;qrCodeImage.style.display='block';}
         else if(pix.qr_base64){qrCodeImage.src=pix.qr_base64.startsWith('data:')?pix.qr_base64:'data:image/png;base64,'+pix.qr_base64;qrCodeImage.style.display='block';}
