@@ -1040,18 +1040,22 @@ pintrk('page');
           donorMessage=document.getElementById('donorMessage');
 
     modalPicker.addEventListener('change',function(){
-      const val=parseFloat(this.value);
-      if(val>=500){
-        cpfContainer.style.display='block';
-        if(anonymousCheckbox && anonymousCheckbox.checked){
-          donorName.style.display='';
-          donorName.previousElementSibling.style.display='';
-        }
-      } else {
-        cpfContainer.style.display='none';
-        donorCpf.value='';
-      }
-    });
+  const val=parseFloat(this.value);
+  if(val>=500){
+    cpfContainer.style.display='block';
+    // Sempre mostra o nome quando valor >= 500, independente do checkbox
+    donorName.style.display='';
+    if(donorName.previousElementSibling) donorName.previousElementSibling.style.display='';
+  } else {
+    cpfContainer.style.display='none';
+    donorCpf.value='';
+    // Se for < 500 E o checkbox está marcado, esconde o nome
+    if(anonymousCheckbox && anonymousCheckbox.checked){
+      donorName.style.display='none';
+      if(donorName.previousElementSibling) donorName.previousElementSibling.style.display='none';
+    }
+  }
+});
 
     function resetModalFields(){
       donorName.value='';donorEmail.value='';donorCpf.value='';
