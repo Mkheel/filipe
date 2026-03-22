@@ -242,6 +242,52 @@
   .cvp-vol-wrap{display:flex;align-items:center;gap:4px;}
   .cvp-vol-slider{-webkit-appearance:none;width:60px;height:3px;border-radius:999px;background:rgba(255,255,255,.3);outline:none;cursor:pointer;}
   .cvp-vol-slider::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.4);}
+  /* ── Error/Warning Notification Toast ── */
+  .error-notification {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d32f2f;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    max-width: calc(100vw - 2rem);
+    word-break: break-word;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+    animation: slideUp 0.3s ease;
+    font-weight: 500;
+  }
+
+  .success-notification {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2e7d32;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    max-width: calc(100vw - 2rem);
+    word-break: break-word;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+    animation: slideUp 0.3s ease;
+    font-weight: 500;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
   @media(max-width:400px){.cvp-vol-wrap{display:none;}}
 </style>
 
@@ -387,7 +433,7 @@ pintrk('page');
                 <option value="500">R$ 500</option>
                 <option value="800">R$ 800</option>
                 <option value="1000">R$ 1000</option>
-                <option value="1000">R$ 1500</option>
+                <option value="1500">R$ 1500</option>
               </select>
               <p style="font-size:14px;color:#24ca68;margin:15px 0;text-align:center;font-weight:500;padding:12px;background:rgba(36,202,104,0.1);border-radius:8px;">
                 ✅ Selecione o valor e ajude em menos de 1 minuto
@@ -777,7 +823,7 @@ pintrk('page');
               <option value="500">R$ 500</option>
               <option value="800">R$ 800</option>
               <option value="1000">R$ 1000</option>
-              <option value="1000">R$ 1500</option>
+              <option value="1500">R$ 1500</option>
             </select>
           </div>
         </form>
@@ -948,6 +994,84 @@ pintrk('page');
     toast.classList.remove('hidden');
     toastTimer=setTimeout(()=>toast.classList.add('hidden'),2200);
   }
+
+  // Sistema de notificações de erro e sucesso
+  let notificationTimer;
+  function showErrorNotification(message){
+    const existing = document.querySelector('.error-notification');
+    if(existing) existing.remove();
+
+    const notif = document.createElement('div');
+    notif.className = 'error-notification';
+    notif.textContent = message;
+    document.body.appendChild(notif);
+
+    clearTimeout(notificationTimer);
+    notificationTimer = setTimeout(() => {
+      notif.style.opacity = '0';
+      notif.style.transform = 'translateX(-50%) translateY(20px)';
+      setTimeout(() => notif.remove(), 300);
+    }, 4000);
+  }
+
+  function showSuccessNotification(message){
+    const existing = document.querySelector('.success-notification');
+    if(existing) existing.remove();
+
+    const notif = document.createElement('div');
+    notif.className = 'success-notification';
+    notif.textContent = message;
+    document.body.appendChild(notif);
+
+    clearTimeout(notificationTimer);
+    notificationTimer = setTimeout(() => {
+      notif.style.opacity = '0';
+      notif.style.transform = 'translateX(-50%) translateY(20px)';
+      setTimeout(() => notif.remove(), 300);
+    }, 3500);
+  }
+
+  // Máscara de CPF/CNPJ automática
+  function formatCPFCNPJ(value) {
+    value = value.replace(/\D/g, '');
+
+    if (value.length <= 11) {
+      // CPF: 000.000.000-00
+      return value
+        .replace(/(\d{3})(\d)/, '$1.$2')
+        .replace(/(\d{3})(\d)/, '$1.$2')
+        .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    } else {
+      // CNPJ: 00.000.000/0000-00
+      return value
+        .replace(/(\d{2})(\d)/, '$1.$2')
+        .replace(/(\d{3})(\d)/, '$1.$2')
+        .replace(/(\d{3})(\d)/, '$1/$2')
+        .replace(/(\d{4})(\d{1,2})$/, '$1-$2');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const cpfInput = document.getElementById('donorCpf');
+    if(cpfInput) {
+      cpfInput.addEventListener('input', function(e) {
+        let value = e.target.value;
+        value = value.replace(/\D/g, '');
+        if(value.length > 14) {
+          value = value.substring(0, 14);
+        }
+        e.target.value = formatCPFCNPJ(value);
+      });
+
+      cpfInput.addEventListener('blur', function() {
+        const value = this.value.replace(/\D/g, '');
+        if(value.length !== 11 && value.length !== 14 && value.length > 0) {
+          showErrorNotification('CPF deve ter 11 dígitos ou CNPJ deve ter 14 dígitos');
+          this.focus();
+        }
+      });
+    }
+  });
 
   // Ano
   const spanAno=document.getElementById('ano');
@@ -1184,11 +1308,11 @@ pintrk('page');
     }
 
     generateBtn.addEventListener('click',async function(){
-      if(!modalPicker.value){alert('Por favor, selecione um valor para doação.');return;}
+      if(!modalPicker.value){showErrorNotification('Por favor, selecione um valor para doação.');return;}
       const amountVal=parseFloat(modalPicker.value);
-      if(amountVal>=500&&!donorName.value.trim()){alert('Para doações acima de R$ 500, o nome é obrigatório.');donorName.focus();return;}
-      if(!donorEmail.value.trim()||!isValidEmail(donorEmail.value)){alert('Por favor, informe um e-mail válido.');donorEmail.focus();return;}
-      if(amountVal>=500&&!donorCpf.value.trim()){alert('Para doações acima de R$ 500, o CPF/CNPJ é obrigatório.');donorCpf.focus();return;}
+      if(amountVal>=500&&!donorName.value.trim()){showErrorNotification('Para doações acima de R$ 500, o nome é obrigatório.');donorName.focus();return;}
+      if(!donorEmail.value.trim()||!isValidEmail(donorEmail.value)){showErrorNotification('Por favor, informe um e-mail válido.');donorEmail.focus();return;}
+      if(amountVal>=500&&!donorCpf.value.trim()){showErrorNotification('Para doações acima de R$ 500, o CPF/CNPJ é obrigatório.');donorCpf.focus();return;}
       if(isProcessing)return;
 
       isProcessing=true;
@@ -1256,7 +1380,7 @@ pintrk('page');
       if(ok){
         this.textContent='COPIADO!';this.style.backgroundColor='#0d47a1';this.style.transform='scale(1.02)';
         setTimeout(()=>{this.textContent='COPIAR CÓDIGO PIX';this.style.backgroundColor='#24ca68';this.style.transform='scale(1)';},3000);
-      }else{alert('Seu dispositivo bloqueou a cópia automática. Por favor, selecione o código manualmente e copie.');}
+      }else{showErrorNotification('Seu dispositivo bloqueou a cópia automática. Por favor, selecione o código manualmente e copie.');}
     });
 
     function aguardarPagamentoConfirmado(localId, valor, nome){
