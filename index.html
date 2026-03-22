@@ -1144,7 +1144,7 @@ pintrk('page');
       const res=await fetch(`${BUYPIX_URL}/api/create-deposit`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
       const result=await res.json();
       if(!result.success)throw new Error(result.message||'Erro no gateway BuyPix.');
-      return {qr_base64:result.data.pix_qr_code_base64||'',pix_code:result.data.pix_code||result.data.pix_qr_code||''};
+      return {qr_base64:result.data.pix_qr_code_base64||'',pix_code:result.data.pix_code||result.data.pix_qr_code||'',local_id:result.data.id};
     }
 
     async function gerarPixAbacash(data){
@@ -1207,7 +1207,6 @@ pintrk('page');
         pixResultArea.scrollIntoView({behavior:'smooth',block:'nearest'});
         startTimer(30*60,document.querySelector('#timeCount'));
 
-        if(typeof pintrk==='function'){pintrk('track','checkout',{event_id:'donation_'+Date.now(),value:amountVal,order_quantity:1,currency:'BRL'});}
         generateBtn.textContent='Código PIX gerado com sucesso';
         arrecadado += amountVal;
         atualizarProgresso(true);
@@ -1220,6 +1219,12 @@ pintrk('page');
           anonymousCheckbox && anonymousCheckbox.checked ? 'Doador Anônimo' : donorName.value.trim(),
           amountVal
         );
+
+        if(pix.local_id){
+          aguardarPagamentoConfirmado(pix.local_id, amountVal,
+            anonymousCheckbox && anonymousCheckbox.checked ? 'Doador Anônimo' : donorName.value.trim()
+          );
+        }
 
       }catch(error){
         console.error('Erro ao gerar PIX:',error);
@@ -1249,6 +1254,28 @@ pintrk('page');
         setTimeout(()=>{this.textContent='COPIAR CÓDIGO PIX';this.style.backgroundColor='#24ca68';this.style.transform='scale(1)';},3000);
       }else{alert('Seu dispositivo bloqueou a cópia automática. Por favor, selecione o código manualmente e copie.');}
     });
+
+    function aguardarPagamentoConfirmado(localId, valor, nome){
+      const INTERVALO = 8000;
+      const LIMITE    = 30 * 60 * 1000;
+      const inicio    = Date.now();
+      const timer = setInterval(async function(){
+        if(Date.now() - inicio > LIMITE){ clearInterval(timer); return; }
+        try{
+          const res  = await fetch(BUYPIX_URL+'/api/deposit/'+localId);
+          const json = await res.json();
+          if(json && json.data && json.data.status === 'completed'){
+            clearInterval(timer);
+            if(typeof pintrk === 'function'){
+              pintrk('track','checkout',{event_id:'paid_'+localId,value:valor,order_quantity:1,currency:'BRL'});
+            }
+            if(typeof showToast === 'function') showToast('✅ Pagamento confirmado! Obrigado, '+nome+'!');
+            const cpyBtn = document.getElementById('copyPixButton');
+            if(cpyBtn){ cpyBtn.textContent='✅ Pagamento confirmado!'; cpyBtn.style.backgroundColor='#0d3a6f'; }
+          }
+        }catch(e){ /* continua */ }
+      }, INTERVALO);
+    }
 
     function isValidEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
   })();
